@@ -76,11 +76,13 @@ Exercise data is split into one file per muscle group instead of a single `exerc
 
 - **Arda Günaydın** - Scrum Master - filters, workout builder, local storage
 - **Tamara Marusych** - Product Owner - interface, design and page setup
-- **Ali Dikdere** - Developer - interactive muscle map
 - **Aysel Feyza Sivrihisar** - Developer - exercise data model and exercise display
+- **Ali Dikdere** - Developer - front muscle map and click events
+- **Hassan Maaz** - Developer - back muscle view, view switching and map styling
 
-All four members are developers; Product Owner and Scrum Master are additional responsibilities. The team communicates through a group chat and meets in person once a week.
 
+All five members are developers; Product Owner and Scrum Master are additional responsibilities. The team communicates through a group chat and meets in person once a week.
+                                                  
 ## Project Management
 
 The project follows the Scrum framework in two-week sprints and is managed on Trello:
