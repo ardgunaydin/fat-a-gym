@@ -1,21 +1,16 @@
-
-# 💪 FATaGYM
+# FATaGYM
 
 ### Interactive Human Anatomy & Personalized Workout Platform
 
 **FATaGYM** is an interactive fitness web application designed to make workout planning more visual, accessible, and personalized.
 
-The platform allows users to explore an interactive human anatomy model, select individual muscle groups, discover targeted exercises, and create customized workout routines based on their fitness goals.
+Users explore an interactive human anatomy model, select a muscle group, discover targeted exercises, and build their own workout routines.
 
-This application is being developed as part of the **Team Project** course at the **University of Lodz**.
+Developed for the **Team Project** course at the **University of Lodz**.
 
 ---
 
-## 🎯 Project Objectives
-
-FATaGYM aims to simplify fitness planning by combining interactive anatomical visualization with practical exercise information.
-
-Our main objectives are:
+## Project Objectives
 
 - Make workout discovery intuitive through an interactive human body model.
 - Help users understand which muscles are targeted by different exercises.
@@ -23,77 +18,42 @@ Our main objectives are:
 - Allow users to create personalized training routines.
 - Deliver a responsive and user-friendly fitness experience.
 
-## 🚀 Key Features
+## Key Features
 
-### 🧍 Interactive Muscle Map
+**Interactive muscle map.** Front and back views of the human body with clickable muscle groups: chest, back, shoulders, biceps, triceps, abs, legs and glutes. The selected muscle is highlighted and its exercises are shown.
 
-- Front and back views of the human body.
-- Clickable muscle groups, including chest, back, shoulders, biceps, triceps, abs, and legs.
-- Visual highlighting of selected muscles.
-- Dynamic display of corresponding exercises.
+**Exercise library.** Exercises organized by muscle group, with step-by-step instructions, recommended sets, repetitions and rest periods, required equipment and difficulty level.
 
-### 🏋️ Exercise Library
+**Exercise filters.** Filter by experience level, by available equipment and by home or gym training.
 
-- Exercises organized by muscle group.
-- Step-by-step exercise instructions.
-- Recommended sets, repetitions, and rest periods.
-- Required equipment and exercise difficulty levels.
+**Custom workout builder.** Pick exercises from different muscle groups, build a routine and save it locally.
 
-### 🔍 Smart Exercise Filters
+**Planned.** A muscle heatmap that colours the muscles targeted by the exercises in a routine, a workout mode with step-by-step progress, set tracking and rest timers, plus workout history, favorite exercises and basic progress statistics.
 
-- Filter by experience level.
-- Filter by available gym equipment.
-- Choose between home and gym workouts.
+User accounts and server-side profiles are out of scope for this term: the project has no backend and no database.
 
-### 📋 Custom Workout Builder
+## Technology Stack
 
-- Select exercises from multiple muscle groups.
-- Create personalized workout routines.
-- Organize exercises into structured training sessions.
-- Save custom workouts locally.
+HTML5, CSS3 and JavaScript for the application itself, SVG for the interactive anatomy, JSON for the exercise data, LocalStorage for saved workouts, Git and GitHub for version control.
 
-### 🔥 Muscle Heatmap
+There is no backend and no build step.
 
-- Highlight muscles targeted by selected exercises.
-- Visualize muscle involvement across workout routines.
+## UI/UX Design
 
-### ⏱️ Workout Mode
+A modern and sporty interface: black or dark grey background with a neon green accent, clean and readable typography, consistent button, card and panel styles, and smooth transitions and hover feedback. The layout is responsive for desktop and mobile. The main screen shows the anatomical body model next to the exercise information panel.
 
-- Follow exercises step by step.
-- Mark completed sets.
-- Use built-in rest timers.
-- Track workout completion.
+## Getting Started
 
-### 📊 Progress Tracking (Planned)
+1. Clone the repository.
+2. Start a local web server, for example the Live Server extension in VS Code.
+3. Open `index.html` through that server.
 
-- User profiles.
-- Workout history.
-- Favorite exercises.
-- Training statistics and progress visualization.
+Opening `index.html` directly from the file system does not work: the browser blocks reading the JSON data files over the `file://` protocol.
 
-## 🛠️ Technology Stack
-
-| Technology | Purpose |
-|---|---|
-| HTML5 | Application structure |
-| CSS3 | Styling and responsive layout |
-| JavaScript | Interactive features and application logic |
-| SVG | Interactive anatomical muscle visualization |
-| JSON | Exercise and workout data |
-| LocalStorage | Local workout and preference storage |
-| Git & GitHub | Version control and team collaboration |
-
-The technology stack may evolve as development progresses.
-
-## 🗂️ Planned Project Structure
+## Project Structure
 
     FATaGYM/
     ├── index.html
-    ├── README.md
-    ├── assets/
-    │   ├── images/
-    │   ├── icons/
-    │   └── anatomy/
     ├── css/
     │   ├── style.css
     │   └── responsive.css
@@ -101,96 +61,65 @@ The technology stack may evolve as development progresses.
     │   ├── main.js
     │   ├── anatomy.js
     │   ├── exercises.js
+    │   ├── filters.js
     │   ├── workout-builder.js
     │   └── storage.js
-    └── data/
-        └── exercises.json
+    ├── data/
+    │   └── one JSON file per muscle group
+    ├── assets/
+    │   └── anatomy/
+    └── docs/
 
-This structure is proposed for the initial development stage and may change as the application grows.
+Exercise data is split into one file per muscle group instead of a single `exercises.json`, so that two people never edit the same file.
 
-## 🎨 UI/UX Design
+## Team
 
-FATaGYM will feature a modern and sporty interface.
+- **Arda Günaydın** - Scrum Master - filters, workout builder, local storage
+- **Tamara Marusych** - Product Owner - interface, design and page setup
+- **Ali Dikdere** - Developer - interactive muscle map
+- **Aysel Feyza Sivrihisar** - Developer - exercise data model and exercise display
 
-- **Primary Background:** Black / Dark Gray
-- **Accent Color:** Neon Green
-- **Typography:** Clean, modern, and readable
-- **Layout:** Responsive design for desktop and mobile
-- **Visual Elements:** Interactive SVG anatomy illustrations
-- **Animations:** Smooth transitions and interactive feedback
+All four members are developers; Product Owner and Scrum Master are additional responsibilities. The team communicates through a group chat and meets in person once a week.
 
-The main interface will feature an anatomical human body model alongside an exercise information panel.
+## Project Management
 
-## 🗓️ Development Roadmap
+The project follows the Scrum framework in two-week sprints and is managed on Trello:
 
-### Phase 1 — Minimum Viable Product (MVP)
+https://trello.com/b/6ad105e8fa5abf148c173bd8/fatagym-team-project
 
-- [ ] Design the homepage.
-- [ ] Develop a responsive layout.
-- [ ] Create front and back anatomical views.
-- [ ] Implement 8–10 clickable muscle groups.
-- [ ] Build the initial exercise database.
-- [ ] Display exercises dynamically based on selected muscles.
-- [ ] Implement exercise detail panels.
+The board has three lists, Backlog, In Progress and Done. Every card carries two labels: a MoSCoW priority (Must, Should, Could, Won't) and a story point estimate. During a sprint, cards are moved to In Progress and assigned to a member, and every member has at least one task per sprint.
 
-### Phase 2 — Enhanced Functionality
+Documentation is kept in this repository under `docs/`: requirements documentation, technical documentation, user manual, one sprint backlog per sprint for the whole team, and one sprint summary per member per sprint.
 
-- [ ] Add exercise filtering.
-- [ ] Develop a custom workout builder.
-- [ ] Implement workout favorites.
-- [ ] Create muscle heatmap functionality.
-- [ ] Improve animations and usability.
-- [ ] Add LocalStorage support.
+## Team Contracts
 
-### Phase 3 — Advanced Features
+Fixed names that connect the parts written by different members:
 
-- [ ] Implement workout mode.
-- [ ] Add rest timers and set completion tracking.
-- [ ] Develop workout history.
-- [ ] Introduce user profiles.
-- [ ] Add progress statistics.
-- [ ] Explore personalized workout recommendations.
+- **Muscle identifiers**, used in the SVG, the data file names and the code: `chest`, `back`, `shoulders`, `biceps`, `triceps`, `abs`, `legs`, `glutes`
+- **Page section ids**: `#anatomy-view`, `#exercise-list`, `#exercise-detail`, `#empty-state`, `#filter-panel`
+- **Muscle selection event**: the map dispatches `muscleSelected` with the muscle id in `detail.muscle`, and the exercise list listens for it
+- **Exercise data**: `data/chest.json` is the reference file, every other file copies its structure, field names never change
 
-## 👥 Team & Collaboration
+## Git Workflow
 
-**Project:** FATaGYM  
-**Course:** Team Project  
-**University:** University of Lodz  
-**Project Type:** Collaborative Web Application
+Branch, commit, push, open a pull request, merge into `main` after review. Branch naming follows the pattern `name/area`, for example `name/exercises` or `name/anatomy`. A pull request needs approval from at least one other member. The `main` branch contains stable, reviewed code.
 
-The project is developed collaboratively using Git and GitHub.
+## Development Roadmap
 
-Team members contribute through separate branches, pull requests, code reviews, and issue tracking.
+1. **MVP** - homepage, responsive layout, front and back anatomy views, 8 clickable muscle groups, exercise data and dynamic exercise display with detail panels.
+2. **Enhanced functionality** - exercise filters, custom workout builder, favorites, muscle heatmap, LocalStorage.
+3. **Advanced features** - workout mode, rest timers, workout history, progress statistics.
 
-### Team Members
+The full prioritized backlog is maintained on the Trello board.
 
-To be announced.
+## Project Status
 
-## 🔀 Git Workflow
+Sprint 1 is in progress: project setup, interactive muscle map, exercise data model and exercise display.
 
-The team will follow a feature-based development workflow:
+## Academic Information
 
-1. Create a branch for a new feature.
-2. Implement and test the changes.
-3. Commit changes with descriptive messages.
-4. Push the feature branch to GitHub.
-5. Open a Pull Request.
-6. Review and merge approved changes into `main`.
-
-The `main` branch should contain stable, reviewed code.
-
-## 📌 Project Status
-
-**Current Stage: Planning & Initial Development**
-
-Our first development priority is to deliver a fully functional interactive muscle map with targeted exercise recommendations.
-
-Additional features will be introduced incrementally according to the project roadmap.
-
-## 📚 Academic Information
-
-Developed for educational purposes as part of the **Computer Science — Team Project** course at the **University of Lodz, Poland**.
+Developed for educational purposes as part of the Computer Science Team Project course at the University of Lodz, Poland.
 
 ---
 
-**FATaGYM — Explore Muscles. Discover Exercises. Build Your Workout.**
+**FATaGYM - Explore Muscles. Discover Exercises. Build Your Workout.**
