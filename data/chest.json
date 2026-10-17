@@ -1,0 +1,92 @@
+[
+  {
+    "id": "bench-press",
+    "name": "Barbell Bench Press",
+    "image": "",
+    "imageCaption": "",
+    "muscle": "chest",
+    "equipment": "barbell",
+    "difficulty": "intermediate",
+    "sets": 3,
+    "reps": "8-10",
+    "rest": 90,
+    "steps": [
+      "Lie on the bench with your feet flat on the floor.",
+      "Hold the bar a little wider than your shoulders.",
+      "Lower the bar to your chest slowly.",
+      "Push the bar up until your arms are straight."
+    ]
+  },
+  {
+    "id": "incline-dumbbell-press",
+    "name": "Incline Dumbbell Press",
+    "image": "",
+    "imageCaption": "",
+    "muscle": "chest",
+    "equipment": "dumbbell",
+    "difficulty": "intermediate",
+    "sets": 3,
+    "reps": "10-12",
+    "rest": 75,
+    "steps": [
+      "Set the bench to a 30 degree angle.",
+      "Sit down and hold one dumbbell in each hand.",
+      "Press the dumbbells up over your chest.",
+      "Lower them slowly to shoulder level."
+    ]
+  },
+  {
+    "id": "push-up",
+    "name": "Push-Up",
+    "image": "",
+    "imageCaption": "",
+    "muscle": "chest",
+    "equipment": "bodyweight",
+    "difficulty": "beginner",
+    "sets": 3,
+    "reps": "12-15",
+    "rest": 60,
+    "steps": [
+      "Put your hands on the floor under your shoulders.",
+      "Keep your body in a straight line.",
+      "Bend your elbows and lower your chest.",
+      "Push the floor away until your arms are straight."
+    ]
+  },
+  {
+    "id": "cable-chest-fly",
+    "name": "Cable Chest Fly",
+    "image": "",
+    "imageCaption": "",
+    "muscle": "chest",
+    "equipment": "cable",
+    "difficulty": "beginner",
+    "sets": 3,
+    "reps": "12-15",
+    "rest": 60,
+    "steps": [
+      "Stand between two cable machines.",
+      "Hold one handle in each hand with a small bend in your elbows.",
+      "Bring your hands together in front of your chest.",
+      "Open your arms slowly back to the start."
+    ]
+  },
+  {
+    "id": "chest-dip",
+    "name": "Chest Dip",
+    "image": "",
+    "imageCaption": "",
+    "muscle": "chest",
+    "equipment": "parallel bars",
+    "difficulty": "advanced",
+    "sets": 3,
+    "reps": "6-10",
+    "rest": 90,
+    "steps": [
+      "Hold the parallel bars and lift your body.",
+      "Lean your upper body a little forward.",
+      "Bend your elbows and go down slowly.",
+      "Push up until your arms are straight."
+    ]
+  }
+]
