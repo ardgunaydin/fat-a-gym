@@ -18,7 +18,7 @@ async function loadExercises(muscle) {
   }
 }
 
-// Shows the exercise names as a clickable list.
+// Shows the exercises as a clickable list with difficulty and equipment.
 function renderExerciseList(exercises) {
   const listElement = document.getElementById("exercise-list");
   const detailElement = document.getElementById("exercise-detail");
@@ -29,8 +29,11 @@ function renderExerciseList(exercises) {
   for (const exercise of exercises) {
     const button = document.createElement("button");
     button.className = "exercise-item";
-    button.textContent = exercise.name;
-
+    button.innerHTML =
+      "<span class='exercise-name'>" + exercise.name + "</span>" +
+      "<span class='exercise-meta'>" + exercise.difficulty + " · " +
+      exercise.equipment + "</span>";
+    
     button.addEventListener("click", function () {
       showExerciseDetails(exercise);
     });
