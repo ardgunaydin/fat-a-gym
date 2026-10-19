@@ -10,8 +10,12 @@ async function loadExercises(muscle) {
     return [];
   }
 
-  const exercises = await response.json();
-  return exercises;
+  try {
+    const exercises = await response.json();
+    return exercises;
+  } catch (error) {
+    return [];
+  }
 }
 
 // Shows the exercise names as a clickable list.
