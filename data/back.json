@@ -1,0 +1,92 @@
+[
+  {
+    "id": "pull-up",
+    "name": "Pull-Up",
+    "image": "",
+    "imageCaption": "",
+    "muscle": "back",
+    "equipment": "pull-up bar",
+    "difficulty": "advanced",
+    "sets": 3,
+    "reps": "5-8",
+    "rest": 90,
+    "steps": [
+      "Hold the bar with your hands wider than your shoulders.",
+      "Hang with straight arms and tight shoulders.",
+      "Pull your body up until your chin passes the bar.",
+      "Go down slowly to the start position."
+    ]
+  },
+  {
+    "id": "lat-pulldown",
+    "name": "Lat Pulldown",
+    "image": "",
+    "imageCaption": "",
+    "muscle": "back",
+    "equipment": "cable",
+    "difficulty": "beginner",
+    "sets": 3,
+    "reps": "10-12",
+    "rest": 75,
+    "steps": [
+      "Sit down and fix your legs under the pads.",
+      "Hold the bar wider than your shoulders.",
+      "Pull the bar down to your upper chest.",
+      "Let the bar go up slowly."
+    ]
+  },
+  {
+    "id": "bent-over-row",
+    "name": "Bent-Over Barbell Row",
+    "image": "",
+    "imageCaption": "",
+    "muscle": "back",
+    "equipment": "barbell",
+    "difficulty": "intermediate",
+    "sets": 3,
+    "reps": "8-10",
+    "rest": 90,
+    "steps": [
+      "Stand with your knees a little bent.",
+      "Bend your upper body forward and keep your back straight.",
+      "Pull the bar to your stomach.",
+      "Lower the bar slowly until your arms are straight."
+    ]
+  },
+  {
+    "id": "seated-cable-row",
+    "name": "Seated Cable Row",
+    "image": "",
+    "imageCaption": "",
+    "muscle": "back",
+    "equipment": "cable",
+    "difficulty": "beginner",
+    "sets": 3,
+    "reps": "10-12",
+    "rest": 75,
+    "steps": [
+      "Sit down and put your feet on the platform.",
+      "Hold the handle with straight arms.",
+      "Pull the handle to your stomach and squeeze your back.",
+      "Return slowly to the start position."
+    ]
+  },
+  {
+    "id": "single-arm-dumbbell-row",
+    "name": "Single-Arm Dumbbell Row",
+    "image": "",
+    "imageCaption": "",
+    "muscle": "back",
+    "equipment": "dumbbell",
+    "difficulty": "intermediate",
+    "sets": 3,
+    "reps": "10-12",
+    "rest": 60,
+    "steps": [
+      "Put one knee and one hand on the bench.",
+      "Hold a dumbbell with your free hand.",
+      "Pull the dumbbell up to your waist.",
+      "Lower it slowly and repeat with the other arm."
+    ]
+  }
+]
