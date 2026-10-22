@@ -26,6 +26,13 @@ function renderExerciseList(exercises) {
   listElement.innerHTML = "";
   detailElement.innerHTML = "";
 
+  // No exercise for this muscle yet: tell the user instead of leaving the panel blank.
+  if (exercises.length === 0) {
+    listElement.innerHTML =
+      "<p class='empty-message'>No exercises for this muscle yet.</p>";
+    return;
+  }
+
   for (const exercise of exercises) {
     const button = document.createElement("button");
     button.className = "exercise-item";
