@@ -47,10 +47,10 @@
 
 | Task | Status | Notes |
 |---|---|---|
-| Complete exercise list, detail panel, and empty state with real data | Needs confirmation | Confirm current implementation |
-| Ensure `renderExerciseList` works with a filtered list | Needs confirmation | Required for Arda’s filters to connect |
-| Fill `data/back.json` if it is not complete | Needs confirmation | Five exercises |
-| Write the exercise data format section of the documentation | Needs confirmation | Confirm completion with Feyza |
+| Complete exercise list, detail panel, and empty state with real data | Done | Merged in PR #1  |
+| Ensure `renderExerciseList` works with a filtered list | Done | getLoadedExercises() and renderExerciseList(list), PR #4  |
+| Fill `data/back.json` if it is not complete | Done | Five exercises, same schema as chest.json |
+| Write the exercise data format section of the documentation | In Progress | Planned for 28 October |
 
 ## Ali
 
