@@ -1,0 +1,92 @@
+[
+    {
+        "id": "barbell-hip-thrust",
+        "name": "Barbell Hip Thrust",
+        "image": "",
+        "imageCaption": "",
+        "muscle": "glutes",
+        "equipment": "barbell",
+        "difficulty": "intermediate",
+        "sets": 3,
+        "reps": "8-12",
+        "rest": 90,
+        "steps": [
+            "Sit on the floor with your upper back against a bench and a barbell over your hips.",
+            "Bend your knees and place your feet flat on the floor.",
+            "Push through your heels and lift your hips until your body forms a straight line from shoulders to knees.",
+            "Lower your hips slowly to the starting position."
+        ]
+    },
+    {
+        "id": "glute-bridge",
+        "name": "Glute Bridge",
+        "image": "",
+        "imageCaption": "",
+        "muscle": "glutes",
+        "equipment": "bodyweight",
+        "difficulty": "beginner",
+        "sets": 3,
+        "reps": "12-15",
+        "rest": 60,
+        "steps": [
+            "Lie on your back with your knees bent and feet flat on the floor.",
+            "Place your feet about hip-width apart.",
+            "Squeeze your glutes and lift your hips.",
+            "Lower your hips slowly without fully relaxing at the bottom."
+        ]
+    },
+    {
+        "id": "cable-glute-kickback",
+        "name": "Cable Glute Kickback",
+        "image": "",
+        "imageCaption": "",
+        "muscle": "glutes",
+        "equipment": "cable",
+        "difficulty": "beginner",
+        "sets": 3,
+        "reps": "12-15 per leg",
+        "rest": 60,
+        "steps": [
+            "Attach an ankle strap to a low cable pulley and secure it around one ankle.",
+            "Hold the machine for balance and stand upright.",
+            "Move the strapped leg backward while keeping it slightly bent.",
+            "Return the leg slowly and repeat before switching sides."
+        ]
+    },
+    {
+        "id": "bulgarian-split-squat",
+        "name": "Bulgarian Split Squat",
+        "image": "",
+        "imageCaption": "",
+        "muscle": "glutes",
+        "equipment": "dumbbell",
+        "difficulty": "intermediate",
+        "sets": 3,
+        "reps": "8-10 per leg",
+        "rest": 75,
+        "steps": [
+            "Stand a short step in front of a bench and rest one foot behind you on it.",
+            "Hold a dumbbell in each hand and keep your torso steady.",
+            "Bend your front knee to lower your body under control.",
+            "Push through your front foot to return to standing, then switch sides."
+        ]
+    },
+    {
+        "id": "cable-pull-through",
+        "name": "Cable Pull-Through",
+        "image": "",
+        "imageCaption": "",
+        "muscle": "glutes",
+        "equipment": "cable",
+        "difficulty": "intermediate",
+        "sets": 3,
+        "reps": "10-12",
+        "rest": 75,
+        "steps": [
+            "Set a cable pulley to its lowest position and attach a rope handle.",
+            "Stand facing away from the machine with the rope held between your legs.",
+            "Push your hips backward while keeping your back straight and knees slightly bent.",
+            "Drive your hips forward and squeeze your glutes to stand upright."
+        ]
+    }
+]

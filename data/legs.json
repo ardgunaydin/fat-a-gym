@@ -1,0 +1,92 @@
+[
+    {
+        "id": "barbell-squat",
+        "name": "Barbell Squat",
+        "image": "",
+        "imageCaption": "",
+        "muscle": "legs",
+        "equipment": "barbell",
+        "difficulty": "intermediate",
+        "sets": 3,
+        "reps": "8-10",
+        "rest": 90,
+        "steps": [
+            "Stand with your feet about shoulder-width apart and hold the bar across your upper back.",
+            "Bend your knees and hips to lower your body while keeping your back straight.",
+            "Lower until your thighs are about parallel to the floor.",
+            "Push through your feet to return to the starting position."
+        ]
+    },
+    {
+        "id": "leg-press",
+        "name": "Leg Press",
+        "image": "",
+        "imageCaption": "",
+        "muscle": "legs",
+        "equipment": "leg press machine",
+        "difficulty": "beginner",
+        "sets": 3,
+        "reps": "10-12",
+        "rest": 75,
+        "steps": [
+            "Sit on the machine and place your feet shoulder-width apart on the platform.",
+            "Release the safety handles and lower the platform by bending your knees.",
+            "Stop before your lower back lifts from the seat.",
+            "Push through your feet to extend your legs without locking your knees."
+        ]
+    },
+    {
+        "id": "romanian-deadlift",
+        "name": "Romanian Deadlift",
+        "image": "",
+        "imageCaption": "",
+        "muscle": "legs",
+        "equipment": "barbell",
+        "difficulty": "intermediate",
+        "sets": 3,
+        "reps": "8-10",
+        "rest": 90,
+        "steps": [
+            "Stand upright while holding a barbell in front of your thighs.",
+            "Keep a slight bend in your knees and push your hips backward.",
+            "Lower the bar along your legs while keeping your back straight.",
+            "Drive your hips forward to return to standing."
+        ]
+    },
+    {
+        "id": "walking-lunge",
+        "name": "Walking Lunge",
+        "image": "",
+        "imageCaption": "",
+        "muscle": "legs",
+        "equipment": "dumbbell",
+        "difficulty": "intermediate",
+        "sets": 3,
+        "reps": "10 per leg",
+        "rest": 75,
+        "steps": [
+            "Stand upright with a dumbbell in each hand.",
+            "Take a step forward and lower your body until both knees are bent.",
+            "Keep your front knee aligned with your foot.",
+            "Push through your front foot and step forward with the other leg."
+        ]
+    },
+    {
+        "id": "leg-extension",
+        "name": "Leg Extension",
+        "image": "",
+        "imageCaption": "",
+        "muscle": "legs",
+        "equipment": "leg extension machine",
+        "difficulty": "beginner",
+        "sets": 3,
+        "reps": "12-15",
+        "rest": 60,
+        "steps": [
+            "Sit on the machine and place your lower legs behind the padded bar.",
+            "Hold the handles and keep your back against the seat.",
+            "Extend your legs until they are nearly straight.",
+            "Lower the padded bar slowly to the starting position."
+        ]
+    }
+]
