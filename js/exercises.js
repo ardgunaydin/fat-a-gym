@@ -1,6 +1,10 @@
 // FATaGYM - exercise data
 // This file reads the exercise data files and shows the exercises on the page.
 
+// The exercises of the muscle group that is open right now.
+// The filter code needs this full list, not the list shown on the screen.
+let loadedExercises = [];
+
 // Loads the exercises of one muscle group, for example "chest".
 // Returns an empty list if the data file cannot be read.
 async function loadExercises(muscle) {
@@ -69,8 +73,16 @@ function showExerciseDetails(exercise) {
     "<ol>" + stepsHtml + "</ol>";
 }
 
+// Gives the full exercise list of the muscle group that is open right now.
+function getLoadedExercises() {
+  return loadedExercises;
+}
+
 // The body map sends this event when the user clicks a muscle.
 document.addEventListener("muscleSelected", async function (event) {
-  const exercises = await loadExercises(event.detail.muscle);
-  renderExerciseList(exercises);
+  loadedExercises = await loadExercises(event.detail.muscle);
+  renderExerciseList(loadedExercises);
+
+  // Tells the filter panel that a new muscle group is open.
+  document.dispatchEvent(new CustomEvent("exercisesLoaded"));
 });
