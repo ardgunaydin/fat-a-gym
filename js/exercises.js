@@ -30,10 +30,15 @@ function renderExerciseList(exercises) {
   listElement.innerHTML = "";
   detailElement.innerHTML = "";
 
-  // No exercise for this muscle yet: tell the user instead of leaving the panel blank.
+  // Nothing to show. Say why: no data for this muscle, or no match after filtering.
   if (exercises.length === 0) {
-    listElement.innerHTML =
-      "<p class='empty-message'>No exercises for this muscle yet.</p>";
+    let message = "No exercises for this muscle yet.";
+
+    if (loadedExercises.length > 0) {
+      message = "No exercises match these filters.";
+    }
+
+    listElement.innerHTML = "<p class='empty-message'>" + message + "</p>";
     return;
   }
 
