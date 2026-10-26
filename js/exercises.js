@@ -67,6 +67,27 @@ function showExerciseDetails(exercise) {
     stepsHtml += "<li>" + step + "</li>";
   }
 
+  // Some exercises have two pictures: the start position and the main step.
+  const pictures = [];
+  if (exercise.image) {
+    pictures.push({ src: exercise.image, caption: exercise.imageCaption });
+  }
+  if (exercise.imageEnd) {
+    pictures.push({ src: exercise.imageEnd, caption: exercise.imageEndCaption });
+  }
+
+  let imageHtml = "";
+  for (const picture of pictures) {
+    imageHtml +=
+      "<img class='exercise-image' src='" + picture.src +
+      "' alt='" + exercise.name +
+      "' width='850' height='567' loading='lazy' style='max-width: 100%; height: auto;'>";
+
+    if (picture.caption) {
+      imageHtml += "<p class='exercise-caption'>" + picture.caption + "</p>";
+    }
+  }
+
   // Data files that do not have the place field yet simply skip this line.
   let placeHtml = "";
   if (exercise.place) {
@@ -75,6 +96,7 @@ function showExerciseDetails(exercise) {
 
   detailElement.innerHTML =
     "<h3>" + exercise.name + "</h3>" +
+    imageHtml +
     "<p>Equipment: " + exercise.equipment + "</p>" +
     placeHtml +
     "<p>Difficulty: " + exercise.difficulty + "</p>" +
