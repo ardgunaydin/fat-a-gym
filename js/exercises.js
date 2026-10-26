@@ -67,9 +67,16 @@ function showExerciseDetails(exercise) {
     stepsHtml += "<li>" + step + "</li>";
   }
 
+  // Data files that do not have the place field yet simply skip this line.
+  let placeHtml = "";
+  if (exercise.place) {
+    placeHtml = "<p>Place: " + exercise.place + "</p>";
+  }
+
   detailElement.innerHTML =
     "<h3>" + exercise.name + "</h3>" +
     "<p>Equipment: " + exercise.equipment + "</p>" +
+    placeHtml +
     "<p>Difficulty: " + exercise.difficulty + "</p>" +
     "<p>Sets: " + exercise.sets +
     " | Reps: " + exercise.reps +
