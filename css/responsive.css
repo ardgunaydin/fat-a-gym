@@ -16,18 +16,22 @@
   .layout {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas:
+      "map filter"
       "map list"
       "map detail"
-      "map empty";
+      "map empty"
+      "map workout";
     align-items: start;
     gap: var(--space-3);
     padding: var(--space-3);
   }
 
   #anatomy-view    { grid-area: map; order: 0; position: sticky; top: var(--space-3); }
+  #filter-panel    { grid-area: filter; }
   #exercise-list   { grid-area: list; order: 0; }
   #exercise-detail { grid-area: detail; order: 0; }
   #empty-state     { grid-area: empty; order: 0; }
+  #workout-list    { grid-area: workout; }
 
   .site-header {
     padding: var(--space-2) var(--space-4);
