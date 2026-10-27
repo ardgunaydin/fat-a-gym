@@ -1,6 +1,10 @@
 // FATaGYM - exercise data
 // This file reads the exercise data files and shows the exercises on the page.
 
+// The exercises of the muscle group that is open right now.
+// The filter code needs this full list, not the list shown on the screen.
+let loadedExercises = [];
+
 // Loads the exercises of one muscle group, for example "chest".
 // Returns an empty list if the data file cannot be read.
 async function loadExercises(muscle) {
@@ -26,10 +30,15 @@ function renderExerciseList(exercises) {
   listElement.innerHTML = "";
   detailElement.innerHTML = "";
 
-  // No exercise for this muscle yet: tell the user instead of leaving the panel blank.
+  // Nothing to show. Say why: no data for this muscle, or no match after filtering.
   if (exercises.length === 0) {
-    listElement.innerHTML =
-      "<p class='empty-message'>No exercises for this muscle yet.</p>";
+    let message = "No exercises for this muscle yet.";
+
+    if (loadedExercises.length > 0) {
+      message = "No exercises match these filters.";
+    }
+
+    listElement.innerHTML = "<p class='empty-message'>" + message + "</p>";
     return;
   }
 
@@ -58,9 +67,38 @@ function showExerciseDetails(exercise) {
     stepsHtml += "<li>" + step + "</li>";
   }
 
+  // Some exercises have two pictures: the start position and the main step.
+  const pictures = [];
+  if (exercise.image) {
+    pictures.push({ src: exercise.image, caption: exercise.imageCaption });
+  }
+  if (exercise.imageEnd) {
+    pictures.push({ src: exercise.imageEnd, caption: exercise.imageEndCaption });
+  }
+
+  let imageHtml = "";
+  for (const picture of pictures) {
+    imageHtml +=
+      "<img class='exercise-image' src='" + picture.src +
+      "' alt='" + exercise.name +
+      "' width='850' height='567' loading='lazy' style='max-width: 100%; height: auto;'>";
+
+    if (picture.caption) {
+      imageHtml += "<p class='exercise-caption'>" + picture.caption + "</p>";
+    }
+  }
+
+  // Data files that do not have the place field yet simply skip this line.
+  let placeHtml = "";
+  if (exercise.place) {
+    placeHtml = "<p>Place: " + exercise.place + "</p>";
+  }
+
   detailElement.innerHTML =
     "<h3>" + exercise.name + "</h3>" +
+    imageHtml +
     "<p>Equipment: " + exercise.equipment + "</p>" +
+    placeHtml +
     "<p>Difficulty: " + exercise.difficulty + "</p>" +
     "<p>Sets: " + exercise.sets +
     " | Reps: " + exercise.reps +
@@ -69,8 +107,16 @@ function showExerciseDetails(exercise) {
     "<ol>" + stepsHtml + "</ol>";
 }
 
+// Gives the full exercise list of the muscle group that is open right now.
+function getLoadedExercises() {
+  return loadedExercises;
+}
+
 // The body map sends this event when the user clicks a muscle.
 document.addEventListener("muscleSelected", async function (event) {
-  const exercises = await loadExercises(event.detail.muscle);
-  renderExerciseList(exercises);
+  loadedExercises = await loadExercises(event.detail.muscle);
+  renderExerciseList(loadedExercises);
+
+  // Tells the filter panel that a new muscle group is open.
+  document.dispatchEvent(new CustomEvent("exercisesLoaded"));
 });
