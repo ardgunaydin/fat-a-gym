@@ -1,0 +1,110 @@
+[
+  {
+    "id": "dumbbell-tricep-extension-pronated-grip",
+    "name": "Dumbbell Tricep Extension Pronated Grip",
+    "image": "assets/exercises/dumbbell-tricep-extension-pronated-grip.jpg",
+    "imageCaption": "Dumbbell Tricep Extension Pronated Grip, starting position (Free Exercise DB)",
+	  "imageEnd": "assets/exercises/dumbbell-tricep-extension-pronated-grip-end.jpg",
+    "imageEndCaption": "Step 3: Lower the dumbbells near your ears (Free Exercise DB)",
+    "muscle": "triceps",
+    "equipment": "dumbbell",
+	  "place": "gym",
+    "difficulty": "beginner",
+    "sets": 3,
+    "reps": "12-15",
+    "rest": 60,
+    "steps": [
+      "Lie down on a flat bench holding two dumbbells directly above your shoulders. Your arms should be fully extended and form a 90 degree angle from your torso and the floor.",
+      "The palms of your hands should be facing forward, and your elbows should be tucked in. This will be your starting position.",
+      "Now, inhale and slowly lower the dumbbells until they are near your ears. Be sure to keep your upper arms stationary and your elbows tucked in.",
+      "Then, exhale and use your triceps to return the weight to the starting position."
+    ]
+  },
+    {
+    "id": "parallel-bar-dip",
+    "name": "Parallel Bar Dip",
+    "image": "assets/exercises/parallel-bar-dip.jpg",
+    "imageCaption": "Parallel Bar Dip, starting position (Free Exercise DB)",
+	  "imageEnd": "assets/exercises/parallel-bar-dip-end.jpg",
+    "imageEndCaption": "Step 2: Lower your body until your elbows reach 90 degrees (Free Exercise DB)",
+    "muscle": "triceps",
+    "equipment": "parallel bars",
+	  "place": "gym",
+    "difficulty": "beginner",
+    "sets": 3,
+    "reps": "8-12",
+    "rest": 90,
+    "steps": [
+      "Stand between a set of parallel bars. Place a hand on each bar, and then take a small jump to help you get into the starting position with your arms locked out.",
+      "Begin by flexing the elbow, lowering your body until your arms break 90 degrees. Avoid swinging, and maintain good posture throughout the descent.",
+      "Reverse the motion by extending the elbow, pushing yourself back up into the starting position.",
+      "Repeat for the desired number of repetitions."
+    ]
+  },
+    {
+    "id": "cable-rope-overhead-triceps-extension",
+    "name": "Cable Rope Overhead Triceps Extension",
+    "image": "assets/exercises/cable-rope-overhead-triceps-extension.jpg",
+    "imageCaption": "Cable Rope Overhead Triceps Extension, starting position (Free Exercise DB)",
+	  "imageEnd": "assets/exercises/cable-rope-overhead-triceps-extension-end.jpg",
+    "imageEndCaption": "Step 2: Arms extended overhead (Free Exercise DB)",
+    "muscle": "triceps",
+    "equipment": "cable",
+	  "place": "gym",
+    "difficulty": "intermediate",
+    "sets": 3,
+    "reps": "10-12",
+    "rest": 75,
+    "steps": [
+      "Attach a rope to the bottom pulley of the pulley machine.",
+      "Grasping the rope with both hands, extend your arms with your hands directly above your head using a neutral grip (palms facing each other). Your elbows should be in close to your head and the arms should be perpendicular to the floor with the knuckles aimed at the ceiling. This will be your starting position.",
+      "Slowly lower the rope behind your head as you hold the upper arms stationary. Inhale as you perform this movement and pause when your triceps are fully stretched.",
+      "Return to the starting position by flexing your triceps as you breathe out.",
+      "Repeat for the recommended amount of repetitions."
+    ]
+  },
+  {
+    "id": "incline-barbell-triceps-extension",
+    "name": "Incline Barbell Triceps Extension",
+    "image": "assets/exercises/incline-barbell-triceps-extension.jpg",
+    "imageCaption": "Incline Barbell Triceps Extension, starting position (Free Exercise DB)",
+	  "imageEnd": "assets/exercises/incline-barbell-triceps-extension-end.jpg",
+    "imageEndCaption": "Step 4: Lower the bar behind your head (Free Exercise DB)",
+    "muscle": "triceps",
+    "equipment": "barbell",
+	  "place": "gym",
+    "difficulty": "intermediate",
+    "sets": 3,
+    "reps": "10-12",
+    "rest": 75,
+    "steps": [
+      "Hold a barbell with an overhand grip (palms down) that is a little closer together than shoulder width.",
+      "Lie back on an incline bench set at any angle between 45-75-degrees.",
+      "Bring the bar overhead with your arms extended and elbows in. The arms should be in line with the torso above the head. This will be your starting position.",
+      "Now lower the bar in a semicircular motion behind your head until your forearms touch your biceps. Inhale as you perform this movement. Tip: Keep your upper arms stationary and close to your head at all times. Only the forearms should move.",
+      "Return to the starting position as you breathe out and you contract the triceps. Hold the contraction for a second.",
+      "Repeat for the recommended amount of repetitions."
+    ]
+  },
+  {
+    "id": "kneeling-cable-triceps-extension",
+    "name": "Kneeling Cable Triceps Extension",
+    "image": "assets/exercises/kneeling-cable-triceps-extension.jpg",
+    "imageCaption": "Kneeling Cable Triceps Extension, starting position (Free Exercise DB)",
+	  "imageEnd": "assets/exercises/kneeling-cable-triceps-extension-end.jpg",
+    "imageEndCaption": "Step 3: Extend your arms to straighten your elbows (Free Exercise DB)",
+    "muscle": "triceps",
+    "equipment": "cable",
+	  "place": "gym",
+    "difficulty": "advanced",
+    "sets": 3,
+    "reps": "12-15",
+    "rest": 60,
+    "steps": [
+      "Adjust the machine seat and select a suitable weight.",
+      "Position your upper arms against the pads and hold the handles.",
+      "Extend your elbows to move your forearms away from your upper arms.",
+      "Slowly return to the starting position while maintaining control."
+    ]
+  }
+]
