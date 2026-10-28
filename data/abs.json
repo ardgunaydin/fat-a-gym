@@ -1,0 +1,110 @@
+[
+  {
+    "id": "crunches",
+    "name": "Crunches",
+    "image": "assets/exercises/crunches.jpg",
+    "imageCaption": "Crunches, starting position (Free Exercise DB)",
+	"imageEnd": "assets/exercises/crunches-end.jpg",
+    "imageEndCaption": "Step 4: Contract your abs and hold the position for one second (Free Exercise DB)",
+    "muscle": "abs",
+    "equipment": "bodyweight",
+	"place": "home",
+    "difficulty": "beginner",
+    "sets": 3,
+    "reps": "12-15",
+    "rest": 45,
+    "steps": [
+        "Lie flat on your back with your feet flat on the ground, or resting on a bench with your knees bent at a 90 degree angle. If you are resting your feet on a bench, place them three to four inches apart and point your toes inward so they touch.",
+        "Now place your hands lightly on either side of your head keeping your elbows in. Tip: Don't lock your fingers behind your head.",
+        "While pushing the small of your back down in the floor to better isolate your abdominal muscles, begin to roll your shoulders off the floor.",
+        "Continue to push down as hard as you can with your lower back as you contract your abdominals and exhale. Your shoulders should come up off the floor only about four inches, and your lower back should remain on the floor. At the top of the movement, contract your abdominals hard and keep the contraction for a second. Tip: Focus on slow, controlled movement - don't cheat yourself by using momentum.",
+        "After the one second contraction, begin to come down slowly again to the starting position as you inhale.",
+        "Repeat for the recommended amount of repetitions."
+    ]
+  },
+  {
+    "id": "plank",
+    "name": "Plank",
+    "image": "assets/exercises/plank.jpg",
+    "imageCaption": "Plank, starting position (Free Exercise DB)",
+	"imageEnd": "assets/exercises/plank-end.jpg",
+    "imageEndCaption": "Step 2: Hold your body straight for as long as possible (Free Exercise DB)",
+    "muscle": "abs",
+    "equipment": "bodyweight",
+	"place": "home",
+    "difficulty": "beginner",
+    "sets": 3,
+    "reps": "20-45 seconds",
+    "rest": 45,
+    "steps": [
+        "Get into a prone position on the floor, supporting your weight on your toes and your forearms. Your arms are bent and directly below the shoulder.",
+        "Keep your body straight at all times, and hold this position as long as possible. To increase difficulty, an arm or leg can be raised."
+    ]
+  },
+  {
+    "id": "hanging-leg-raise",
+    "name": "Hanging Leg Raise",
+    "image": "assets/exercises/hanging-leg-raise.jpg",
+    "imageCaption": "Hanging Leg Raise, starting position (Free Exercise DB)",
+	"imageEnd": "assets/exercises/hanging-leg-raise-end.jpg",
+    "imageEndCaption": "Step 2: Raise your legs to a 90-degree angle (Free Exercise DB)",
+    "muscle": "abs",
+    "equipment": "pull-up bar",
+	"place": "gym",
+    "difficulty": "intermediate",
+    "sets": 3,
+    "reps": "8-12",
+    "rest": 75,
+    "steps": [
+        "Hang from a chin-up bar with both arms extended at arms length in top of you using either a wide grip or a medium grip. The legs should be straight down with the pelvis rolled slightly backwards. This will be your starting position.",
+        "Raise your legs until the torso makes a 90-degree angle with the legs. Exhale as you perform this movement and hold the contraction for a second or so.",
+        "Go back slowly to the starting position as you breathe in.",
+        "Repeat for the recommended amount of repetitions."
+    ]
+  },
+  {
+    "id": "cable-crunch",
+    "name": "Cable Crunch",
+    "image": "assets/exercises/cable-crunch.jpg",
+    "imageCaption": "Cable Crunch, starting position (Free Exercise DB)",
+	"imageEnd": "assets/exercises/cable-crunch-end.jpg",
+    "imageEndCaption": "Step 4: Crunch your abs and bring your elbows toward your thighs (Free Exercise DB)",
+    "muscle": "abs",
+    "equipment": "cable",
+	"place": "gym",
+    "difficulty": "intermediate",
+    "sets": 3,
+    "reps": "12-15",
+    "rest": 60,
+    "steps": [
+        "Kneel below a high pulley that contains a rope attachment.",
+        "Grasp cable rope attachment and lower the rope until your hands are placed next to your face.",
+        "Flex your hips slightly and allow the weight to hyperextend the lower back. This will be your starting position.",
+        "With the hips stationary, flex the waist as you contract the abs so that the elbows travel towards the middle of the thighs. Exhale as you perform this portion of the movement and hold the contraction for a second.",
+        "Slowly return to the starting position as you inhale. Tip: Make sure that you keep constant tension on the abs throughout the movement. Also, do not choose a weight so heavy that the lower back handles the brunt of the work.",
+        "Repeat for the recommended amount of repetitions."
+    ]
+  },
+  {
+    "id": "hanging-pike",
+    "name": "Hanging Pike",
+    "image": "assets/exercises/hanging-pike.jpg",
+    "imageCaption": "Hanging Pike, starting position (Free Exercise DB)",
+	"imageEnd": "assets/exercises/hanging-pike-end.jpg",
+    "imageEndCaption": "Step 3: Raise your legs toward the bar (Free Exercise DB)",
+    "muscle": "abs",
+    "equipment": "pull-up bar",
+	"place": "gym",
+    "difficulty": "advanced",
+    "sets": 3,
+    "reps": "8-10",
+    "rest": 90,
+    "steps": [
+        "Hang from a chin-up bar with your legs and feet together using an overhand grip (palms facing away from you) that is slightly wider than shoulder width. Tip: You may use wrist wraps in order to facilitate holding on to the bar.",
+        "Now bend your knees at a 90 degree angle and bring the upper legs forward so that the calves are perpendicular to the floor while the thighs remain parallel to it. This will be your starting position.",
+        "Pull your legs up as you exhale until you almost touch your shins with the bar above you. Tip: Try to straighten your legs as much as possible while at the top.",
+        "Lower your legs as slowly as possible until you reach the starting position. Tip: Avoid swinging and using momentum at all times.",
+        "Repeat for the recommended amount of repetitions."
+    ]
+  }
+]
