@@ -1,7 +1,7 @@
 ﻿# FATaGYM Sprint 1 Backlog
 
 **Sprint dates:** 16-30 October 2026  
-**Current review date:** 25 October 2026
+**Current review date:** 30 October 2026
 
 ## Status legend
 
@@ -23,53 +23,53 @@
 
 | Task | Status | Notes |
 |---|---|---|
-| Implement `applyFilters(exercises, { level, equipment, place })` in `js/filters.js` | Done | Logic tested with exercise data |
-| Build the filter interface in `#filter-panel`, including a clear button | In Progress | Need to confirm the page container and integration point |
-| Add the “Add to Workout” action and workout list | In Progress | Core workout functions are implemented; UI connection remains |
-| Save and load workouts with LocalStorage | In Progress | Storage logic tested; browser interface connection remains |
-| Remove one exercise and delete the whole workout | In Progress | Core functions are implemented and tested; UI connection remains |
-| Fill `data/legs.json` and `data/glutes.json` with five exercises each | Done | Both files passed JSON and schema checks |
-| Write `docs/technical-documentation.md` for own work | Done | File created and pushed |
-| Write this team sprint backlog | In Progress | Update team statuses when confirmed |
-| Write `docs/sprint-1/summary-arda.md` | To Do | Due at sprint end on 30 October |
+| Implement `applyFilters(exercises, { level, equipment, place })` in `js/filters.js` | Done | Logic and browser filtering tested |
+| Build the filter interface in `#filter-panel`, including a clear button | Done | Difficulty, equipment, and place filters tested |
+| Add the “Add to Workout” action and workout list | Done | Adding an exercise and rendering the workout list tested |
+| Save and load workouts with LocalStorage | Done | Persistence after refreshing the page tested |
+| Remove one exercise and delete the whole workout | Done | Remove and Clear Workout actions tested |
+| Fill `data/legs.json` and `data/glutes.json` with five exercises each | Done | Both files passed JSON, 14-field schema, and place-value checks |
+| Write and update `docs/technical-documentation.md` | Done | Updated to describe the implemented filters, workout UI, and data schema |
+| Write and update this team sprint backlog | Done | Arda’s confirmed task statuses updated at sprint review |
+| Write `docs/sprint-1/summary-arda.docx` | Done | Individual sprint summary for 16-30 October |
 
 ## Tamara
 
 | Task | Status | Notes |
 |---|---|---|
-| Build the page skeleton in `index.html` | Needs confirmation | Sprint plan lists the four main page sections |
-| Complete responsive layout and shared styles | Needs confirmation | Confirm current branch and progress with Tamara |
-| Build the homepage section | Needs confirmation | Confirm current progress with Tamara |
-| Fill `data/triceps.json` and `data/abs.json` | Needs confirmation | Five exercises per file |
-| Write the assigned technical documentation section | Needs confirmation | Confirm completion with Tamara |
+| Build the page skeleton in `index.html` | Needs confirmation | Confirm final status with Tamara |
+| Complete responsive layout and shared styles | Needs confirmation | Confirm final status with Tamara |
+| Build the homepage section | Needs confirmation | Confirm final status with Tamara |
+| Fill `data/triceps.json` and `data/abs.json` | Needs confirmation | Confirm final status with Tamara |
+| Write the assigned technical documentation section | Needs confirmation | Confirm final status with Tamara |
 
 ## Feyza
 
 | Task | Status | Notes |
 |---|---|---|
-| Complete exercise list, detail panel, and empty state with real data | Done | Merged in PR #1  |
-| Ensure `renderExerciseList` works with a filtered list | Done | getLoadedExercises() and renderExerciseList(list), PR #4  |
-| Fill `data/back.json` if it is not complete | Done | Five exercises, same schema as chest.json |
-| Write the exercise data format section of the documentation | Done | 14-field schema documented on 29 October |
+| Complete exercise list, detail panel, and empty state with real data | Done | Merged in PR #1 |
+| Ensure `renderExerciseList` works with a filtered list | Done | `getLoadedExercises()` and `renderExerciseList(list)`, PR #4 |
+| Fill `data/back.json` if it is not complete | Done | Five exercises |
+| Write the exercise data format section of the documentation | Done | 14-field schema documented |
 
 ## Ali
 
 | Task | Status | Notes |
 |---|---|---|
-| Fix front map issues found during integration | Needs confirmation | Confirm current status with Ali |
+| Fix front map issues found during integration | Needs confirmation | Confirm final status with Ali |
 | Fill `data/shoulders.json` | Needs confirmation | Five exercises |
-| Write documentation for the front map and click event | Needs confirmation | Confirm completion with Ali |
+| Write documentation for the front map and click event | Needs confirmation | Confirm final status with Ali |
 | Prepare the muscle heatmap idea with Hassan if Must tasks are complete | Needs confirmation | Could item; only after Must work |
 
 ## Hassan
 
 | Task | Status | Notes |
 |---|---|---|
-| Finish the back view and front/back switching | Needs confirmation | Confirm current status with Hassan |
+| Finish the back view and front/back switching | Needs confirmation | Confirm final status with Hassan |
 | Polish the map and test it on a phone | Needs confirmation | Confirm real-device testing |
 | Add the hover tooltip if time allows | Needs confirmation | Could item |
 | Fill `data/biceps.json` | Needs confirmation | Five exercises |
-| Write documentation for the back view and map styling | Needs confirmation | Confirm completion with Hassan |
+| Write documentation for the back view and map styling | Needs confirmation | Confirm final status with Hassan |
 
 ## Exercise data checklist
 
