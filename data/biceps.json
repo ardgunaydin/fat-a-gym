@@ -1,0 +1,107 @@
+[
+  {
+    "id": "barbell-curl",
+    "name": "Barbell Curl",
+    "image": "",
+    "imageCaption": "",
+    "imageEnd": "",
+    "imageEndCaption": "",
+    "muscle": "biceps",
+    "equipment": "barbell",
+    "place": "gym",
+    "difficulty": "beginner",
+    "sets": 3,
+    "reps": "8-12",
+    "rest": 75,
+    "steps": [
+      "Stand tall with your feet shoulder-width apart.",
+      "Hold the bar with an underhand grip and keep your elbows next to your body.",
+      "Curl the bar up toward your shoulders without swinging.",
+      "Lower the bar slowly until your arms are straight."
+    ]
+  },
+  {
+    "id": "hammer-curl",
+    "name": "Dumbbell Hammer Curl",
+    "image": "",
+    "imageCaption": "",
+    "imageEnd": "",
+    "imageEndCaption": "",
+    "muscle": "biceps",
+    "equipment": "dumbbell",
+    "place": "home",
+    "difficulty": "beginner",
+    "sets": 3,
+    "reps": "10-12",
+    "rest": 60,
+    "steps": [
+      "Stand with one dumbbell in each hand, palms facing your body.",
+      "Keep your upper arms still next to your torso.",
+      "Curl both dumbbells up while your palms keep facing each other.",
+      "Lower the dumbbells slowly and repeat."
+    ]
+  },
+  {
+    "id": "incline-dumbbell-curl",
+    "name": "Incline Dumbbell Curl",
+    "image": "",
+    "imageCaption": "",
+    "imageEnd": "",
+    "imageEndCaption": "",
+    "muscle": "biceps",
+    "equipment": "dumbbell",
+    "place": "gym",
+    "difficulty": "intermediate",
+    "sets": 3,
+    "reps": "8-10",
+    "rest": 75,
+    "steps": [
+      "Set the bench to an incline and sit back with a dumbbell in each hand.",
+      "Let your arms hang straight down behind your body.",
+      "Curl the dumbbells up toward your shoulders.",
+      "Lower them slowly until your arms are fully stretched."
+    ]
+  },
+  {
+    "id": "concentration-curl",
+    "name": "Concentration Curl",
+    "image": "",
+    "imageCaption": "",
+    "imageEnd": "",
+    "imageEndCaption": "",
+    "muscle": "biceps",
+    "equipment": "dumbbell",
+    "place": "home",
+    "difficulty": "beginner",
+    "sets": 3,
+    "reps": "10-12 per arm",
+    "rest": 60,
+    "steps": [
+      "Sit on a bench with your legs apart and one dumbbell in your hand.",
+      "Rest the back of that upper arm on your inner thigh.",
+      "Curl the dumbbell toward your shoulder and squeeze at the top.",
+      "Lower it slowly, finish your reps, then switch arms."
+    ]
+  },
+  {
+    "id": "chin-up",
+    "name": "Chin-Up",
+    "image": "",
+    "imageCaption": "",
+    "imageEnd": "",
+    "imageEndCaption": "",
+    "muscle": "biceps",
+    "equipment": "pull-up bar",
+    "place": "gym",
+    "difficulty": "intermediate",
+    "sets": 3,
+    "reps": "6-10",
+    "rest": 90,
+    "steps": [
+      "Hold the bar with an underhand grip, hands shoulder-width apart.",
+      "Pull your chest toward the bar by bending your elbows.",
+      "Stop for a moment when your chin is above the bar.",
+      "Lower yourself slowly until your arms are straight."
+    ]
+  }
+]
