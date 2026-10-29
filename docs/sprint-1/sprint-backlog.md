@@ -50,7 +50,7 @@
 | Complete exercise list, detail panel, and empty state with real data | Done | Merged in PR #1  |
 | Ensure `renderExerciseList` works with a filtered list | Done | getLoadedExercises() and renderExerciseList(list), PR #4  |
 | Fill `data/back.json` if it is not complete | Done | Five exercises, same schema as chest.json |
-| Write the exercise data format section of the documentation | In Progress | Planned for 28 October |
+| Write the exercise data format section of the documentation | Done | 14-field schema documented on 29 October |
 
 ## Ali
 
@@ -75,8 +75,8 @@
 
 | Muscle group | File | Status |
 |---|---|---|
-| Chest | `data/chest.json` | Needs confirmation |
-| Back | `data/back.json` | Needs confirmation |
+| Chest | `data/chest.json` | Done |
+| Back | `data/back.json` | Done |
 | Shoulders | `data/shoulders.json` | Needs confirmation |
 | Biceps | `data/biceps.json` | Needs confirmation |
 | Triceps | `data/triceps.json` | Needs confirmation |
