@@ -22,7 +22,7 @@ async function loadExercises(muscle) {
   }
 }
 
-// Shows the exercises as a clickable list with difficulty and equipment.
+// Shows the exercise list.
 function renderExerciseList(exercises) {
   const listElement = document.getElementById("exercise-list");
   const detailElement = document.getElementById("exercise-detail");
@@ -30,7 +30,7 @@ function renderExerciseList(exercises) {
   listElement.innerHTML = "";
   detailElement.innerHTML = "";
 
-  // Nothing to show. Say why: no data for this muscle, or no match after filtering.
+  // Explain whether the muscle has no data or the filters found no matches.
   if (exercises.length === 0) {
     let message = "No exercises for this muscle yet.";
 
@@ -49,7 +49,7 @@ function renderExerciseList(exercises) {
       "<span class='exercise-name'>" + exercise.name + "</span>" +
       "<span class='exercise-meta'>" + exercise.difficulty + " · " +
       exercise.equipment + "</span>";
-    
+
     button.addEventListener("click", function () {
       showExerciseDetails(exercise);
     });
@@ -58,7 +58,7 @@ function renderExerciseList(exercises) {
   }
 }
 
-// Shows the details of one exercise in the detail panel.
+// Shows the details of one exercise.
 function showExerciseDetails(exercise) {
   const detailElement = document.getElementById("exercise-detail");
 
@@ -69,14 +69,23 @@ function showExerciseDetails(exercise) {
 
   // Some exercises have two pictures: the start position and the main step.
   const pictures = [];
+
   if (exercise.image) {
-    pictures.push({ src: exercise.image, caption: exercise.imageCaption });
+    pictures.push({
+      src: exercise.image,
+      caption: exercise.imageCaption
+    });
   }
+
   if (exercise.imageEnd) {
-    pictures.push({ src: exercise.imageEnd, caption: exercise.imageEndCaption });
+    pictures.push({
+      src: exercise.imageEnd,
+      caption: exercise.imageEndCaption
+    });
   }
 
   let imageHtml = "";
+
   for (const picture of pictures) {
     imageHtml +=
       "<img class='exercise-image' src='" + picture.src +
@@ -88,8 +97,8 @@ function showExerciseDetails(exercise) {
     }
   }
 
-  // Data files that do not have the place field yet simply skip this line.
   let placeHtml = "";
+
   if (exercise.place) {
     placeHtml = "<p>Place: " + exercise.place + "</p>";
   }
@@ -105,14 +114,21 @@ function showExerciseDetails(exercise) {
     " | Rest: " + exercise.rest + " seconds</p>" +
     "<h4>How to do it</h4>" +
     "<ol>" + stepsHtml + "</ol>";
+
+  const workoutContainer = document.getElementById("workout-list");
+  const addButton = createAddToWorkoutButton(exercise, workoutContainer);
+
+  if (addButton) {
+    detailElement.appendChild(addButton);
+  }
 }
 
-// Gives the full exercise list of the muscle group that is open right now.
+// Gives the full exercise list of the currently selected muscle group.
 function getLoadedExercises() {
   return loadedExercises;
 }
 
-// The body map sends this event when the user clicks a muscle.
+// Loads exercises when the body map selects a muscle.
 document.addEventListener("muscleSelected", async function (event) {
   loadedExercises = await loadExercises(event.detail.muscle);
   renderExerciseList(loadedExercises);
