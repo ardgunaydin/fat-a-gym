@@ -106,3 +106,7 @@ function renderWorkoutList(container) {
 
   container.appendChild(clearButton);
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  renderWorkoutList(document.getElementById("workout-list"));
+});
