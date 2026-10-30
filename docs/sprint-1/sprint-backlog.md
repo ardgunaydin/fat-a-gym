@@ -37,11 +37,11 @@
 
 | Task | Status | Notes |
 |---|---|---|
-| Build the page skeleton in `index.html` | Needs confirmation | Confirm final status with Tamara |
-| Complete responsive layout and shared styles | Needs confirmation | Confirm final status with Tamara |
-| Build the homepage section | Needs confirmation | Confirm final status with Tamara |
-| Fill `data/triceps.json` and `data/abs.json` | Needs confirmation | Confirm final status with Tamara |
-| Write the assigned technical documentation section | Needs confirmation | Confirm final status with Tamara |
+| Build the page skeleton in `index.html` | Done | Page structure implemented. |
+| Complete responsive layout and shared styles | Done | Design system, shared styles and responsive layout implemented. |
+| Build the homepage section | Done | Homepage section implemented. |
+| Fill `data/triceps.json` and `data/abs.json` | Done | Both files completed according to the exercise data format agreed on by the team. |
+| Write the assigned technical documentation section | To Do | Still needs to be written. |
 
 ## Feyza
 
