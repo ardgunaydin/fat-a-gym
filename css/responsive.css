@@ -28,12 +28,16 @@
 
   #anatomy-view    { grid-area: map; order: 0; position: sticky; top: var(--space-3); }
   #filter-panel    { grid-area: filter; }
-  #exercise-list   { grid-area: list; order: 0; }
-  #exercise-detail { grid-area: detail; order: 0; }
-  #empty-state     { grid-area: empty; order: 0; }
+  #exercise-list   { grid-area: list; }
+  #exercise-detail { grid-area: detail; }
+  #empty-state     { grid-area: empty; }
   #workout-list    { grid-area: workout; }
 
   .site-header {
     padding: var(--space-2) var(--space-4);
+  }
+
+  .hero {
+    padding-inline: var(--space-3);
   }
 }
