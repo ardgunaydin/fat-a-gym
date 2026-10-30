@@ -150,8 +150,63 @@ button:active,
   transition: border-color var(--transition);
 }
 
+#filter-panel h2,
+#filter-panel h3 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-2);
+}
+
+#filter-panel label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+#filter-panel select {
+  display: block;
+  width: 100%;
+  margin-bottom: var(--space-2);
+  padding: 0.6rem 2.2rem 0.6rem 0.8rem;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--text);
+  background-color: var(--surface-2);
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  appearance: none;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+
+#filter-panel select:focus-visible {
+  border-color: var(--accent);
+}
+
+#filter-panel option {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+#filter-panel button {
+  width: 100%;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
 @media (hover: hover) {
   .layout > section:hover {
+    border-color: var(--accent);
+  }
+  #filter-panel select:hover {
+    border-color: var(--accent);
+  }
+
+  #filter-panel button:hover {
+    color: var(--accent);
     border-color: var(--accent);
   }
 }
