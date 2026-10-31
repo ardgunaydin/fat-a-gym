@@ -5,6 +5,48 @@
 // The filter code needs this full list, not the list shown on the screen.
 let loadedExercises = [];
 
+// The list that is on the screen right now (all exercises or a filtered list).
+// It is needed to draw the list again after a favorite is added or removed.
+let shownExercises = [];
+
+// The favorite exercises are kept in the browser under our own key,
+// so the saved workout of the workout builder is not touched.
+const FAVORITES_KEY = "fatagym-favorites";
+
+// Reads the ids of the favorite exercises from the browser.
+function getFavorites() {
+  const saved = localStorage.getItem(FAVORITES_KEY);
+
+  if (!saved) {
+    return [];
+  }
+
+  try {
+    return JSON.parse(saved);
+  } catch (error) {
+    return [];
+  }
+}
+
+// Tells whether one exercise is marked as favorite.
+function isFavorite(exerciseId) {
+  return getFavorites().includes(exerciseId);
+}
+
+// Adds the exercise to the favorites, or removes it if it is already there.
+function toggleFavorite(exerciseId) {
+  const favorites = getFavorites();
+  const position = favorites.indexOf(exerciseId);
+
+  if (position === -1) {
+    favorites.push(exerciseId);
+  } else {
+    favorites.splice(position, 1);
+  }
+
+  localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+}
+
 // Loads the exercises of one muscle group, for example "chest".
 // Returns an empty list if the data file cannot be read.
 async function loadExercises(muscle) {
@@ -27,6 +69,8 @@ function renderExerciseList(exercises) {
   const listElement = document.getElementById("exercise-list");
   const detailElement = document.getElementById("exercise-detail");
 
+  shownExercises = exercises;
+
   listElement.innerHTML = "";
   detailElement.innerHTML = "";
 
@@ -45,10 +89,13 @@ function renderExerciseList(exercises) {
   for (const exercise of exercises) {
     const button = document.createElement("button");
     button.className = "exercise-item";
+    const star = isFavorite(exercise.id) ? "★" : "";
+
     button.innerHTML =
       "<span class='exercise-name'>" + exercise.name + "</span>" +
       "<span class='exercise-meta'>" + exercise.difficulty + " · " +
-      exercise.equipment + "</span>";
+      exercise.equipment + "</span>" +
+      "<span class='exercise-favorite'>" + star + "</span>";
 
     button.addEventListener("click", function () {
       showExerciseDetails(exercise);
@@ -114,6 +161,24 @@ function showExerciseDetails(exercise) {
     " | Rest: " + exercise.rest + " seconds</p>" +
     "<h4>How to do it</h4>" +
     "<ol>" + stepsHtml + "</ol>";
+
+  // The star button adds the exercise to the favorites or removes it from them.
+  const favoriteButton = document.createElement("button");
+  favoriteButton.className = "favorite-button";
+  favoriteButton.textContent = isFavorite(exercise.id)
+    ? "★ Remove from favorites"
+    : "☆ Add to favorites";
+
+  favoriteButton.addEventListener("click", function () {
+    toggleFavorite(exercise.id);
+
+    // Draw the list again so that the star appears or disappears,
+    // then open the same exercise again.
+    renderExerciseList(shownExercises);
+    showExerciseDetails(exercise);
+  });
+
+  detailElement.appendChild(favoriteButton);
 
   const workoutContainer = document.getElementById("workout-list");
   const addButton = createAddToWorkoutButton(exercise, workoutContainer);
