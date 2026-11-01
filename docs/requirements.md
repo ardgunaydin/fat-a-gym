@@ -14,7 +14,7 @@
 
 **Development Methodology:** Scrum
 
-**Team Size:** 4 Members
+**Team Size:** 5 Members
 
 **Status:** In Development
 
