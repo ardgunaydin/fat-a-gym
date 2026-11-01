@@ -1,30 +1,30 @@
 
 
-\# FATaGYM — Requirements Documentation
+# FATaGYM — Requirements Documentation
 
 
 
-\*\*Project:\*\* FATaGYM  
+**Project:** FATaGYM
 
-\*\*Course:\*\* Team Project  
+**Course:** Team Project
 
-\*\*University:\*\* University of Lodz  
+**University:** University of Lodz
 
-\*\*Application Type:\*\* Web Application  
+**Application Type:** Web Application
 
-\*\*Development Methodology:\*\* Scrum  
+**Development Methodology:** Scrum
 
-\*\*Team Size:\*\* 4 Members  
+**Team Size:** 5 Members
 
-\*\*Status:\*\* In Development
-
-
-
-\---
+**Status:** In Development
 
 
 
-\## 1. Project Overview
+---
+
+
+
+## 1. Project Overview
 
 
 
@@ -44,7 +44,7 @@ The initial version will be developed using HTML, CSS, JavaScript, SVG, and JSON
 
 
 
-\## 2. Project Objectives
+## 2. Project Objectives
 
 
 
@@ -52,19 +52,19 @@ The main objectives of FATaGYM are:
 
 
 
-\- Provide an interactive anatomical muscle map.
+- Provide an interactive anatomical muscle map.
 
-\- Allow users to select individual muscle groups.
+- Allow users to select individual muscle groups.
 
-\- Display exercises related to selected muscles.
+- Display exercises related to selected muscles.
 
-\- Provide detailed exercise instructions.
+- Provide detailed exercise instructions.
 
-\- Support both desktop and mobile devices.
+- Support both desktop and mobile devices.
 
-\- Allow users to filter exercises.
+- Allow users to filter exercises.
 
-\- Enable users to create and save personalized workout routines.
+- Enable users to create and save personalized workout routines.
 
 
 
@@ -72,19 +72,19 @@ The primary objective of the Minimum Viable Product (MVP) is to provide a comple
 
 
 
-1\. Open the FATaGYM website.
+1. Open the FATaGYM website.
 
-2\. Select a muscle group on the anatomical model.
+2. Select a muscle group on the anatomical model.
 
-3\. View exercises targeting that muscle.
+3. View exercises targeting that muscle.
 
-4\. Select an exercise.
+4. Select an exercise.
 
-5\. View exercise instructions and details.
+5. View exercise instructions and details.
 
 
 
-\## 3. Target Users
+## 3. Target Users
 
 
 
@@ -92,23 +92,23 @@ FATaGYM is intended for:
 
 
 
-\- Beginners who want to learn about muscle groups.
+- Beginners who want to learn about muscle groups.
 
-\- Fitness enthusiasts looking for targeted exercises.
+- Fitness enthusiasts looking for targeted exercises.
 
-\- Gym users creating personalized workout routines.
+- Gym users creating personalized workout routines.
 
-\- People exercising at home with limited equipment.
+- People exercising at home with limited equipment.
 
-\- Users interested in understanding human anatomy in relation to fitness.
-
-
-
-\## 4. Functional Requirements
+- Users interested in understanding human anatomy in relation to fitness.
 
 
 
-\### FR-01: Interactive Anatomy Map
+## 4. Functional Requirements
+
+
+
+### FR-01: Interactive Anatomy Map
 
 
 
@@ -128,25 +128,25 @@ Supported muscle groups:
 
 
 
-\- Chest
+- Chest
 
-\- Back
+- Back
 
-\- Shoulders
+- Shoulders
 
-\- Biceps
+- Biceps
 
-\- Triceps
+- Triceps
 
-\- Abs
+- Abs
 
-\- Legs
+- Legs
 
-\- Glutes
+- Glutes
 
 
 
-\### FR-02: Muscle Selection
+### FR-02: Muscle Selection
 
 
 
@@ -158,7 +158,7 @@ Only one muscle group shall remain highlighted at a time.
 
 
 
-\### FR-03: Exercise Database
+### FR-03: Exercise Database
 
 
 
@@ -170,21 +170,21 @@ Each exercise shall contain:
 
 
 
-\- Name
+- Name
 
-\- Target muscle group
+- Target muscle group
 
-\- Difficulty level
+- Difficulty level
 
-\- Required equipment
+- Required equipment
 
-\- Recommended sets
+- Recommended sets
 
-\- Recommended repetitions
+- Recommended repetitions
 
-\- Rest time
+- Rest time
 
-\- Step-by-step instructions
+- Step-by-step instructions
 
 
 
@@ -192,7 +192,7 @@ Each supported muscle group should initially contain at least four to five exerc
 
 
 
-\### FR-04: Exercise List
+### FR-04: Exercise List
 
 
 
@@ -208,7 +208,7 @@ If no exercises are available, an appropriate message shall be shown.
 
 
 
-\### FR-05: Exercise Details
+### FR-05: Exercise Details
 
 
 
@@ -216,21 +216,21 @@ Users shall be able to select an exercise and view:
 
 
 
-\- Exercise name
+- Exercise name
 
-\- Step-by-step instructions
+- Step-by-step instructions
 
-\- Sets and repetitions
+- Sets and repetitions
 
-\- Rest duration
+- Rest duration
 
-\- Required equipment
+- Required equipment
 
-\- Difficulty level
+- Difficulty level
 
 
 
-\### FR-06: Exercise Filters
+### FR-06: Exercise Filters
 
 
 
@@ -238,11 +238,11 @@ The system should allow users to filter exercises by:
 
 
 
-\- Difficulty level
+- Difficulty level
 
-\- Equipment
+- Equipment
 
-\- Workout location (home or gym)
+- Workout location (home or gym)
 
 
 
@@ -250,7 +250,7 @@ Multiple filters should be supported simultaneously.
 
 
 
-\### FR-07: Custom Workout Builder
+### FR-07: Custom Workout Builder
 
 
 
@@ -258,19 +258,19 @@ Users should be able to:
 
 
 
-\- Add exercises to a custom workout.
+- Add exercises to a custom workout.
 
-\- View selected exercises.
+- View selected exercises.
 
-\- Remove exercises from the workout.
+- Remove exercises from the workout.
 
-\- Delete the complete workout.
+- Delete the complete workout.
 
-\- Prevent duplicate exercise entries.
+- Prevent duplicate exercise entries.
 
 
 
-\### FR-08: Local Workout Storage
+### FR-08: Local Workout Storage
 
 
 
@@ -282,7 +282,7 @@ Saved workouts should remain available after the page is closed and reopened on 
 
 
 
-\### FR-09: Workout Mode
+### FR-09: Workout Mode
 
 
 
@@ -290,7 +290,7 @@ If time permits, users may follow their workout routines step by step and mark c
 
 
 
-\### FR-10: Progress Tracking
+### FR-10: Progress Tracking
 
 
 
@@ -298,15 +298,15 @@ Future improvements may include workout history and basic progress statistics.
 
 
 
-\---
+---
 
 
 
-\## 5. Non-Functional Requirements
+## 5. Non-Functional Requirements
 
 
 
-\### NFR-01: Usability
+### NFR-01: Usability
 
 
 
@@ -314,7 +314,7 @@ The application shall provide a clear, intuitive, and easy-to-use interface.
 
 
 
-\### NFR-02: Responsive Design
+### NFR-02: Responsive Design
 
 
 
@@ -322,7 +322,7 @@ The website shall adapt to desktop, tablet, and mobile screen sizes.
 
 
 
-\### NFR-03: Performance
+### NFR-03: Performance
 
 
 
@@ -330,7 +330,7 @@ The application should respond promptly to muscle selections and exercise intera
 
 
 
-\### NFR-04: Compatibility
+### NFR-04: Compatibility
 
 
 
@@ -338,7 +338,7 @@ The application should function in modern browsers, including Chrome, Firefox, a
 
 
 
-\### NFR-05: Maintainability
+### NFR-05: Maintainability
 
 
 
@@ -346,7 +346,7 @@ The source code shall be divided into separate HTML, CSS, JavaScript, and JSON f
 
 
 
-\### NFR-06: Data Consistency
+### NFR-06: Data Consistency
 
 
 
@@ -358,7 +358,7 @@ Muscle identifiers must match between the anatomy module and the exercise databa
 
 
 
-\### NFR-07: Accessibility
+### NFR-07: Accessibility
 
 
 
@@ -366,7 +366,7 @@ Interactive elements should be clearly labeled, visually distinguishable, and us
 
 
 
-\### NFR-08: Language
+### NFR-08: Language
 
 
 
@@ -374,15 +374,15 @@ The initial application interface and exercise descriptions shall be in English.
 
 
 
-\---
+---
 
 
 
-\## 6. MoSCoW Prioritization
+## 6. MoSCoW Prioritization
 
 
 
-\### Must Have
+### Must Have
 
 
 
@@ -390,35 +390,35 @@ The first release requires:
 
 
 
-\- Initial project structure
+- Initial project structure
 
-\- Homepage and design system
+- Homepage and design system
 
-\- Responsive interface
+- Responsive interface
 
-\- Interactive front and back anatomy views
+- Interactive front and back anatomy views
 
-\- Clickable muscle groups
+- Clickable muscle groups
 
-\- Selected muscle highlighting
+- Selected muscle highlighting
 
-\- Standardized exercise data
+- Standardized exercise data
 
-\- Exercise list and detail panel
+- Exercise list and detail panel
 
-\- Empty-state handling
+- Empty-state handling
 
-\- Requirements documentation
+- Requirements documentation
 
-\- Technical documentation
+- Technical documentation
 
-\- User manual
+- User manual
 
-\- Sprint documentation
+- Sprint documentation
 
 
 
-\### Should Have
+### Should Have
 
 
 
@@ -426,25 +426,25 @@ Important features planned after the core functionality:
 
 
 
-\- Exercise filters
+- Exercise filters
 
-\- Custom workout builder
+- Custom workout builder
 
-\- LocalStorage persistence
+- LocalStorage persistence
 
-\- Removing exercises and deleting workouts
+- Removing exercises and deleting workouts
 
-\- Favorite exercises
+- Favorite exercises
 
-\- Muscle name tooltips
+- Muscle name tooltips
 
-\- UI animations and hover effects
+- UI animations and hover effects
 
-\- Exercise images
+- Exercise images
 
 
 
-\### Could Have
+### Could Have
 
 
 
@@ -452,21 +452,21 @@ Optional features depending on available development time:
 
 
 
-\- Workout mode
+- Workout mode
 
-\- Rest timer
+- Rest timer
 
-\- Workout history
+- Workout history
 
-\- Basic progress statistics
+- Basic progress statistics
 
-\- Exercise search
+- Exercise search
 
-\- Light and dark theme switching
+- Light and dark theme switching
 
 
 
-\### Won't Have (Current Release)
+### Won't Have (Current Release)
 
 
 
@@ -474,27 +474,27 @@ The following features are excluded from the current scope:
 
 
 
-\- User registration and authentication
+- User registration and authentication
 
-\- Cross-device workout synchronization
+- Cross-device workout synchronization
 
-\- AI-generated workout recommendations
+- AI-generated workout recommendations
 
-\- Exercise videos
+- Exercise videos
 
-\- Native mobile applications
+- Native mobile applications
 
-\- Social networking features
+- Social networking features
 
-\- Multi-language support
-
-
-
-\---
+- Multi-language support
 
 
 
-\## 7. Technology Requirements
+---
+
+
+
+## 7. Technology Requirements
 
 
 
@@ -526,79 +526,79 @@ The initial application does not require a backend server or external database.
 
 
 
-\## 8. Team Responsibilities
+## 8. Team Responsibilities
 
 
 
-\### Ali — Muscle Map
-
-
-
-Responsible for:
-
-\- SVG anatomy views
-
-\- Clickable muscle regions
-
-\- Muscle selection events
-
-\- Muscle highlighting
-
-\- Front/back view switching
-
-
-
-\### Feyza — Exercise Data and Display
+### Ali — Muscle Map
 
 
 
 Responsible for:
 
-\- Standardized exercise JSON structure
+- SVG anatomy views
 
-\- Exercise data loading
+- Clickable muscle regions
 
-\- Exercise lists
+- Muscle selection events
 
-\- Exercise detail panel
+- Muscle highlighting
 
-\- Empty-state handling
-
-
-
-\### Tamara — Interface and Design
+- Front/back view switching
 
 
 
-Responsible for:
-
-\- HTML page structure
-
-\- CSS design system
-
-\- Homepage
-
-\- Responsive layouts
-
-\- Shared interface components
-
-
-
-\### Arda — Filters, Workout Builder and Storage
+### Feyza — Exercise Data and Display
 
 
 
 Responsible for:
 
-\- Exercise filters
+- Standardized exercise JSON structure
 
-\- Custom workout builder
+- Exercise data loading
 
-\- LocalStorage functionality
+- Exercise lists
 
-\- Workout management
+- Exercise detail panel
 
-\- Scrum coordination
+- Empty-state handling
+
+
+
+### Tamara — Interface and Design
+
+
+
+Responsible for:
+
+- HTML page structure
+
+- CSS design system
+
+- Homepage
+
+- Responsive layouts
+
+- Shared interface components
+
+
+
+### Arda — Filters, Workout Builder and Storage
+
+
+
+Responsible for:
+
+- Exercise filters
+
+- Custom workout builder
+
+- LocalStorage functionality
+
+- Workout management
+
+- Scrum coordination
 
 
 
@@ -606,7 +606,7 @@ All team members will contribute to exercise data and documentation.
 
 
 
-\## 9. Development Methodology
+## 9. Development Methodology
 
 
 
@@ -622,15 +622,15 @@ The team will use:
 
 
 
-\- Trello for task management.
+- Trello for task management.
 
-\- MoSCoW for requirement prioritization.
+- MoSCoW for requirement prioritization.
 
-\- Story Points for relative effort estimation.
+- Story Points for relative effort estimation.
 
-\- GitHub for version control and collaboration.
+- GitHub for version control and collaboration.
 
-\- Feature branches and Pull Requests for development.
+- Feature branches and Pull Requests for development.
 
 
 
@@ -638,17 +638,17 @@ Each sprint shall include:
 
 
 
-\- One shared Sprint Backlog.
+- One shared Sprint Backlog.
 
-\- Tasks assigned to team members.
+- Tasks assigned to team members.
 
-\- Individual Sprint Summaries.
+- Individual Sprint Summaries.
 
-\- A review of completed work.
+- A review of completed work.
 
 
 
-\## 10. MVP Acceptance Criteria
+## 10. MVP Acceptance Criteria
 
 
 
@@ -656,33 +656,33 @@ The first functional version of FATaGYM will be considered ready when:
 
 
 
-1\. The website loads successfully.
+1. The website loads successfully.
 
-2\. Front and back anatomical views are available.
+2. Front and back anatomical views are available.
 
-3\. Users can select supported muscle groups.
+3. Users can select supported muscle groups.
 
-4\. The selected muscle is highlighted.
+4. The selected muscle is highlighted.
 
-5\. Relevant exercises appear after muscle selection.
+5. Relevant exercises appear after muscle selection.
 
-6\. Users can open exercise detail information.
+6. Users can open exercise detail information.
 
-7\. Missing exercise data is handled gracefully.
+7. Missing exercise data is handled gracefully.
 
-8\. The layout works on desktop and mobile screens.
+8. The layout works on desktop and mobile screens.
 
-9\. Exercise data follows the agreed JSON format.
+9. Exercise data follows the agreed JSON format.
 
-10\. The application can be run locally without a backend.
-
-
-
-\---
+10. The application can be run locally without a backend.
 
 
 
-\## 11. Project Scope
+---
+
+
+
+## 11. Project Scope
 
 
 
@@ -694,11 +694,11 @@ The team will prioritize delivering a fully functional interactive anatomy and e
 
 
 
-\---
+---
 
 
 
-\*\*FATaGYM — Explore Muscles. Discover Exercises. Build Your Workout.\*\*
+**FATaGYM — Explore Muscles. Discover Exercises. Build Your Workout.**
 
 
 

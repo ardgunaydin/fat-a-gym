@@ -107,3 +107,19 @@ The exercise list also handles a muscle that has no data file: instead of an err
 | `sets`, `reps`, `rest`, `steps` | Detail panel |
 
 Every record has to keep a non-empty `name`, because the list and the detail panel identify the exercise by its name.
+
+## Arda — Exercise Filters and Workout Builder
+
+### Exercise filters
+
+The filter logic is implemented in `js/filters.js`. The `applyFilters(exercises, options)` function filters exercises by difficulty, equipment, and place. It normalizes values so that comparisons are case-insensitive. If the input is not an array, it returns an empty list.
+
+The filter panel is created by `initializeFilterPanel()`. It provides Difficulty, Equipment, and Place selectors, plus a Clear filters button. Equipment options are populated from the currently loaded exercises. When a filter changes, the panel passes the filtered list to `renderExerciseList()`. The Clear filters button resets all selectors and displays the full list again.
+
+### Workout builder
+
+`js/workout-builder.js` provides the workout list and its controls. `createAddToWorkoutButton()` connects the exercise detail panel to the workout list. An exercise is added only if its `id` is not already present. Each workout row has a Remove button, and Clear Workout removes all saved exercises.
+
+### LocalStorage
+
+`js/storage.js` saves the workout as JSON in LocalStorage under the key `fat-a-gym-workout`. `loadWorkout()` returns the saved exercise array or an empty array when there is no valid saved workout. `clearWorkout()` removes the saved item. The workout list is rendered when the page loads, so saved exercises remain visible after a refresh.
