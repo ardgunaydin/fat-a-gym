@@ -111,7 +111,10 @@ function initializeExerciseSearch() {
   });
 
   wrapper.append(label, input);
-  listElement.before(wrapper);
+  
+  // The box lives inside the exercise list section, as its first child.
+  // Put outside, it would land in the body map column of the page grid.
+  listElement.prepend(wrapper);
 }
 
 // Empties the search box and the searched text.
@@ -133,7 +136,12 @@ function renderExerciseList(exercises) {
   // Remember the full list of the caller, then keep only the searched names.
   requestedExercises = Array.isArray(exercises) ? exercises : [];
   shownExercises = requestedExercises.filter(matchesSearchTerm);
-  listElement.innerHTML = "";
+  
+  // Remove the old rows, but keep the search box where it is.
+  for (const row of listElement.querySelectorAll(".exercise-item, .empty-message")) {
+    row.remove();
+  }
+
   detailElement.innerHTML = "";
 
   // Explain whether the muscle has no data or the filters found no matches.
@@ -143,8 +151,10 @@ function renderExerciseList(exercises) {
     if (loadedExercises.length > 0) {
       message = "No exercises match these filters.";
     }
-
-    listElement.innerHTML = "<p class='empty-message'>" + message + "</p>";
+    const messageElement = document.createElement("p");
+    messageElement.className = "empty-message";
+    messageElement.textContent = message;
+    listElement.appendChild(messageElement);
     return;
   }
 
