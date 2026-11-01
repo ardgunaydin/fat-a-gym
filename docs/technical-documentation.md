@@ -73,3 +73,37 @@ The `place` field describes where the exercise can be performed:
     "Hold the bar a little wider than your shoulders."
   ]
 }
+```
+
+### Data files
+
+All muscle-group data files use the same 14-field record format, so one piece of code reads all of them. `data/chest.json` is the reference file: a new muscle file is created by copying its structure and replacing the records.
+
+| File | Muscle | Records |
+|---|---|---|
+| `data/abs.json` | abs | 5 |
+| `data/back.json` | back | 5 |
+| `data/biceps.json` | biceps | 5 |
+| `data/chest.json` | chest | 5 |
+| `data/glutes.json` | glutes | 5 |
+| `data/legs.json` | legs | 5 |
+| `data/triceps.json` | triceps | 5 |
+
+The photo fields are optional values inside a required structure: every record carries all four photo fields, and a field holds an empty string when that photo is not used. The detail panel then shows only the photos that are present, so a record with two, one or no photos is displayed correctly.
+
+The exercise list also handles a muscle that has no data file: instead of an error, it shows the message `No exercises for this muscle yet.` This keeps the body map usable while new data files are being added.
+
+### Fields used by the interface
+
+| Field | Where it is used |
+|---|---|
+| `id` | Favorite exercises and the saved workout |
+| `name` | Exercise list and detail panel heading |
+| `muscle` | Keeps the record with its muscle group |
+| `equipment` | List line under the name, and the equipment filter |
+| `place` | Place filter (`home` or `gym`) |
+| `difficulty` | List line under the name, and the difficulty filter |
+| `image`, `imageCaption`, `imageEnd`, `imageEndCaption` | Detail panel photos; empty fields are skipped |
+| `sets`, `reps`, `rest`, `steps` | Detail panel |
+
+Every record has to keep a non-empty `name`, because the list and the detail panel identify the exercise by its name.
