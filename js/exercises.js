@@ -9,6 +9,13 @@ let loadedExercises = [];
 // It is needed to draw the list again after a favorite is added or removed.
 let shownExercises = [];
 
+// The list that the body map or the filters asked for, before the search box
+// narrows it. The search box draws this list again on every key press.
+let requestedExercises = [];
+
+// The text that is in the search box right now, in small letters.
+let searchTerm = "";
+
 // The favorite exercises are kept in the browser under our own key,
 // so the saved workout of the workout builder is not touched.
 const FAVORITES_KEY = "fatagym-favorites";
@@ -64,18 +71,73 @@ async function loadExercises(muscle) {
   }
 }
 
+// Tells whether one exercise name contains the searched text.
+// An empty search box lets every exercise pass.
+function matchesSearchTerm(exercise) {
+  if (searchTerm === "") {
+    return true;
+  }
+
+  const name = String(exercise.name || "").toLowerCase();
+  return name.includes(searchTerm);
+}
+
+// Builds the search box above the exercise list.
+// The box is created here, so the shared index.html file is not touched.
+function initializeExerciseSearch() {
+  const listElement = document.getElementById("exercise-list");
+
+  if (!listElement) {
+    return;
+  }
+
+  const wrapper = document.createElement("section");
+  wrapper.className = "exercise-search";
+
+  const label = document.createElement("label");
+  label.htmlFor = "exercise-search-input";
+  label.textContent = "Search";
+
+  const input = document.createElement("input");
+  input.type = "search";
+  input.id = "exercise-search-input";
+  input.placeholder = "Search exercise name";
+
+  input.addEventListener("input", function () {
+    searchTerm = input.value.trim().toLowerCase();
+
+    // Draw the same list again; now the search text decides what is shown.
+    renderExerciseList(requestedExercises);
+  });
+
+  wrapper.append(label, input);
+  listElement.before(wrapper);
+}
+
+// Empties the search box and the searched text.
+function clearExerciseSearch() {
+  const input = document.getElementById("exercise-search-input");
+
+  if (input) {
+    input.value = "";
+  }
+
+  searchTerm = "";
+}
+
 // Shows the exercise list.
 function renderExerciseList(exercises) {
   const listElement = document.getElementById("exercise-list");
   const detailElement = document.getElementById("exercise-detail");
-
-  shownExercises = exercises;
-
+  
+  // Remember the full list of the caller, then keep only the searched names.
+  requestedExercises = Array.isArray(exercises) ? exercises : [];
+  shownExercises = requestedExercises.filter(matchesSearchTerm);
   listElement.innerHTML = "";
   detailElement.innerHTML = "";
 
   // Explain whether the muscle has no data or the filters found no matches.
-  if (exercises.length === 0) {
+  if (shownExercises.length === 0) {
     let message = "No exercises for this muscle yet.";
 
     if (loadedExercises.length > 0) {
@@ -86,7 +148,7 @@ function renderExerciseList(exercises) {
     return;
   }
 
-  for (const exercise of exercises) {
+  for (const exercise of shownExercises) {
     const button = document.createElement("button");
     button.className = "exercise-item";
     const star = isFavorite(exercise.id) ? "★" : "";
@@ -174,7 +236,7 @@ function showExerciseDetails(exercise) {
 
     // Draw the list again so that the star appears or disappears,
     // then open the same exercise again.
-    renderExerciseList(shownExercises);
+    renderExerciseList(requestedExercises);
     showExerciseDetails(exercise);
   });
 
@@ -196,8 +258,14 @@ function getLoadedExercises() {
 // Loads exercises when the body map selects a muscle.
 document.addEventListener("muscleSelected", async function (event) {
   loadedExercises = await loadExercises(event.detail.muscle);
+  
+  // A new muscle group starts with an empty search box,
+  // in the same way as the filters start again.
+  clearExerciseSearch();
+  
   renderExerciseList(loadedExercises);
 
   // Tells the filter panel that a new muscle group is open.
   document.dispatchEvent(new CustomEvent("exercisesLoaded"));
 });
+initializeExerciseSearch();
