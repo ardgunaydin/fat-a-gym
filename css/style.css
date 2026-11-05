@@ -81,7 +81,6 @@ a {
   letter-spacing: 0.02em;
 }
 
-
 .site-title span {
   color: var(--accent);
 }
@@ -164,6 +163,7 @@ button:active,
   font-weight: 500;
 }
 
+
 #filter-panel select {
   display: block;
   width: 100%;
@@ -206,10 +206,251 @@ button:active,
   }
 
   #filter-panel button:hover {
+    color: #f87171;
+    border-color: #f87171;
+  }
+}
+
+.exercise-item {
+  display: block;
+  width: 100%;
+  margin-bottom: var(--space-1);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+}
+
+.exercise-name {
+  display: block;
+  font-weight: 600;
+}
+
+.exercise-meta {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--muted);
+}
+
+@media (hover: hover) {
+  .exercise-item:hover {
+    border-color: var(--accent);
+  }
+}
+
+.exercise-search {
+  margin-bottom: var(--space-2);
+}
+
+.exercise-search label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+
+.exercise-search input {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color var(--transition);
+}
+
+.exercise-search input::placeholder {
+  color: var(--muted);
+}
+
+.exercise-search input:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* One exercise: name and level on the left, favorite star on the right */
+.exercise-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "name fav"
+    "meta fav";
+  align-items: center;
+  column-gap: var(--space-1);
+  width: 100%;
+  margin-bottom: var(--space-1);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+}
+
+.exercise-name {
+  grid-area: name;
+  font-weight: 600;
+}
+
+.exercise-meta {
+  grid-area: meta;
+  margin-top: 0.15rem;
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.exercise-favorite {
+  grid-area: fav;
+  font-size: var(--text-lg);
+  color: var(--accent);
+}
+
+.exercise-favorite:empty {
+  display: none;
+}
+
+/* Message when there are no exercises */
+.empty-message {
+  margin: 0;
+  padding: var(--space-2);
+  text-align: center;
+  color: var(--muted);
+}
+
+
+#exercise-detail h3 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-2);
+}
+
+#exercise-detail h4 {
+  margin: var(--space-3) 0 var(--space-1);
+  font-size: var(--text-lg);
+}
+
+#exercise-detail p {
+  margin: 0 0 0.4rem;
+}
+
+#exercise-detail .exercise-image {
+  display: block;
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  margin-top: var(--space-2);
+  border-radius: var(--radius);
+}
+
+#exercise-detail .exercise-caption {
+  margin: 0.4rem 0 var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--muted);
+}
+
+#exercise-detail ol {
+  margin: 0 0 var(--space-2);
+  padding-left: 1.25rem;
+}
+
+#exercise-detail li {
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+#exercise-detail button {
+  margin: var(--space-1) 0.5rem 0 0;
+}
+
+/* Favorite is quiet, "Add to Workout" stays green */
+.favorite-button {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+@media (hover: hover) {
+  .exercise-search input:hover,
+  .exercise-item:hover {
+    border-color: var(--accent);
+  }
+
+  .favorite-button:hover {
     color: var(--accent);
     border-color: var(--accent);
   }
 }
+
+#workout-list ul {
+  margin: 0 0 var(--space-2);
+  padding: 0;
+  list-style: none;
+}
+
+/* One exercise row: name left, Remove button right */
+#workout-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
+  padding: 0.6rem 0.8rem;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+/* Quiet outline buttons: Remove and Clear Workout */
+#workout-list button {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+#workout-list li button {
+  flex-shrink: 0;
+  padding: 0.3rem 0.8rem;
+  font-size: var(--text-sm);
+}
+
+/* "Your workout is empty." message */
+#workout-list p {
+  margin: 0;
+  color: var(--muted);
+  padding: var(--space-2);
+  text-align: center;
+}
+
+/* Destructive actions turn red on hover */
+@media (hover: hover) {
+  #workout-list button:hover {
+    color: #f87171;
+    border-color: #f87171;
+    transform: none;
+  }
+}
+/* Even spacing inside the workout panel */
+#workout-list h2,
+#workout-list h3 {
+  margin-bottom: var(--space-2);
+}
+
+#workout-list li:last-child {
+  margin-bottom: 0;
+}
+
+#workout-list ul {
+  margin-bottom: var(--space-2);
+} 
 
 @media (prefers-reduced-motion: reduce) {
   * {
