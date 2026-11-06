@@ -1,25 +1,3 @@
-/*
- * js/anatomy-view.js  -  Hassan
- *
- * Adds the BACK view of the body next to Ali's FRONT view, and the Front / Back buttons.
- *
- * How it fits with the other files
- *   - js/anatomy.js (Ali) draws the front map inside #anatomy-view and owns the click listener.
- *     This file never edits it. It only has to run AFTER it, which index.html already does
- *     (anatomy.js is listed before anatomy-view.js).
- *   - Both maps use the same picture, assets/anatomy/body.webp (960 x 837 px, front figure on the
- *     left, back figure on the right). The front map shows the left half (viewBox "0 0 480 837"),
- *     this back map shows the right half (viewBox "480 0 480 837"). Same picture, same scale.
- *   - Every clickable back region follows the same contract as the front one:
- *     class="muscle" and data-muscle="<muscle id>". Ali's click listener sits on #anatomy-view,
- *     so it also catches clicks on the back regions: no new click code is needed here.
- *   - The back regions are named back, shoulders, triceps, glutes, legs ("back of the legs" is
- *     "legs", because it is not one of the 8 official muscle names).
- *
- * Why the back map is written in this file and not pasted into index.html:
- *   js/anatomy.js replaces everything inside #anatomy-view when it runs, so anything pasted into
- *   the HTML would be deleted. The same reason is why Ali's front map is also inside his script.
- */
 (function () {
   'use strict';
 
