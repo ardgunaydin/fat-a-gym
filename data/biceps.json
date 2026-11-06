@@ -25,7 +25,7 @@
     "name": "Dumbbell Hammer Curl",
     "image": "assets/exercises/hammer-curl.jpg",
     "imageCaption": "Hammer curl, starting position (Free Exercise DB)",
-    "imageEnd": "assets/exercises/bicep-curl-end.jpg",
+    "imageEnd": "assets/exercises/hammer-curl-end.jpg",
     "imageEndCaption": "Step 3: the dumbbell is lowered towards the hips (Free Exercise DB)",
     "muscle": "biceps",
     "equipment": "dumbbell",
