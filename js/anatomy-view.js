@@ -50,6 +50,7 @@
   root.insertBefore(bar, frontSvg);
 
   function showView(view) {
+    hideTooltip();
     frontSvg.style.display = view === 'front' ? '' : 'none';
     backSvg.style.display = view === 'back' ? '' : 'none';
     buttons.forEach((button) => {
@@ -63,7 +64,63 @@
       region.classList.toggle('selected', region.dataset.muscle === selected);
     });
   });
+  /* ---------- muscle name tooltip (Trello: Display Muscle Name on Hover) ---------- */
 
+  // The text shown for each muscle id. These are the 8 official muscle ids.
+  const MUSCLE_NAMES = {
+    chest: 'Chest',
+    back: 'Back',
+    shoulders: 'Shoulders',
+    biceps: 'Biceps',
+    triceps: 'Triceps',
+    abs: 'Abs',
+    legs: 'Legs',
+    glutes: 'Glutes'
+  };
+
+  // One small box that is moved around. It works on the front map and the back map, because
+  // every region in both has class="muscle" and data-muscle.
+  const tooltip = document.createElement('div');
+  tooltip.className = 'muscle-tooltip';
+  tooltip.setAttribute('role', 'tooltip');
+  tooltip.hidden = true;
+  document.body.appendChild(tooltip);
+
+  // Pointer enters or moves over a region: show its name.
+  root.addEventListener('pointerover', (event) => {
+    if (event.pointerType === 'touch') return;   // a phone has no hover, so no tooltip there
+    const region = event.target.closest('.muscle');
+    if (!region) { hideTooltip(); return; }
+    const id = region.dataset.muscle;
+    tooltip.textContent = MUSCLE_NAMES[id] || id;
+    tooltip.hidden = false;
+    moveTooltip(event);
+  });
+
+  // The box follows the pointer.
+  root.addEventListener('pointermove', (event) => {
+    if (!tooltip.hidden) moveTooltip(event);
+  });
+
+  // Pointer leaves the map (or the page is scrolled): hide it.
+  root.addEventListener('pointerleave', hideTooltip);
+  window.addEventListener('scroll', hideTooltip, { passive: true });
+
+  // Place the box just below and to the right of the pointer, and keep it inside the window so the
+  // text is always readable (near the right or bottom edge it flips to the other side).
+  function moveTooltip(event) {
+    const gap = 14;
+    let x = event.clientX + gap;
+    let y = event.clientY + gap;
+    if (x + tooltip.offsetWidth > window.innerWidth - 8) x = event.clientX - tooltip.offsetWidth - gap;
+    if (y + tooltip.offsetHeight > window.innerHeight - 8) y = event.clientY - tooltip.offsetHeight - gap;
+    tooltip.style.left = Math.max(8, x) + 'px';
+    tooltip.style.top = Math.max(8, y) + 'px';
+  }
+
+  function hideTooltip() {
+    tooltip.hidden = true;
+  }
   const style = document.createElement('style');
   style.textContent = `
     .view-switch {
@@ -83,9 +140,26 @@
       background: var(--accent, #39ff14);
       color: var(--accent-ink, #0b0d0e);
     }
-    #anatomy-view svg {
+       #anatomy-view svg {
       touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
+    }
+    .muscle-tooltip {
+      position: fixed;
+      z-index: 1000;
+      padding: 0.3rem 0.65rem;
+      border: 1px solid var(--accent, #39ff14);
+      border-radius: 6px;
+      background: var(--surface-2, #212934);
+      color: var(--text, #f2f4f5);
+      font-size: var(--text-sm, 0.875rem);
+      font-weight: 600;
+      line-height: 1.2;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    .muscle-tooltip[hidden] {
+      display: none;
     }`;
   document.head.appendChild(style);
 
