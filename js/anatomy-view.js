@@ -4,18 +4,12 @@
   const root = document.getElementById('anatomy-view');
   if (!root) return;
 
-  // Ali's front map. It must exist already, because anatomy.js runs before this file.
   const frontSvg = root.querySelector('svg');
   if (!frontSvg) {
     console.warn('[anatomy-view] Front map not found. js/anatomy.js must be loaded before js/anatomy-view.js.');
     return;
   }
 
-  /* ---------- the back map ---------- */
-
-  // The polygons were traced on the back figure of body.webp (x = 480..960). Each one follows the
-  // outline of the muscle on the drawing. Shoulders and triceps have an invisible stroke, which
-  // makes their tap area bigger on a phone without changing how the map looks.
   const BACK_SVG = `
         <svg class="anatomy-back" data-view="back" viewBox="480 0 480 837"
              xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Back view of the body">
@@ -53,11 +47,8 @@
     return button;
   });
 
-  // The bar goes inside #anatomy-view, above the map. It cannot go next to the section:
-  // #anatomy-view is one cell of the page grid, an extra element there would break the layout.
   root.insertBefore(bar, frontSvg);
 
-  // The active view is visible, the other one is hidden.
   function showView(view) {
     frontSvg.style.display = view === 'front' ? '' : 'none';
     backSvg.style.display = view === 'back' ? '' : 'none';
@@ -66,11 +57,6 @@
     });
   }
 
-  /* ---------- keep the selected muscle highlighted in both views ---------- */
-
-  // Ali's code gives the clicked region the class "selected". Here the same muscle also gets it
-  // in the other view, so a muscle picked on the front is still highlighted after switching to
-  // the back (and the other way round). Only one muscle group is highlighted at a time.
   document.addEventListener('muscleSelected', (event) => {
     const selected = event.detail && event.detail.muscle;
     root.querySelectorAll('.muscle').forEach((region) => {
@@ -78,11 +64,6 @@
     });
   });
 
-  /* ---------- styles that only this file needs ---------- */
-
-  // The look of the buttons lives here so this part works without editing css/anatomy.css
-  // (Tamara's file). The colours come from the design variables in css/style.css; the values after
-  // the comma are only used if a variable is missing.
   const style = document.createElement('style');
   style.textContent = `
     .view-switch {
