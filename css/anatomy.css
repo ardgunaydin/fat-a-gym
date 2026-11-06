@@ -10,4 +10,30 @@
     fill: transparent;
     pointer-events: all;
     cursor: pointer;
+    transition: fill var(--transition), fill-opacity var(--transition);
+}
+
+#anatomy-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (hover: hover) {
+  #anatomy-view .muscle:hover {
+    fill: var(--accent);
+    fill-opacity: 0.3;
+  }
+}
+
+#anatomy-view .muscle.selected {
+  fill: var(--accent);
+  fill-opacity: 0.5;
+}
+
+@media (max-width: 767px) {
+  #anatomy-view svg {
+    max-width: 300px;
+  }
 }
