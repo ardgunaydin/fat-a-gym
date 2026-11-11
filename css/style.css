@@ -198,7 +198,7 @@ button:active,
   border: 1px solid var(--line);
 }
 @media (hover: hover) {
-  .layout > section:hover {
+  .layout > section:not(:empty):hover {
     border-color: var(--accent);
   }
   #filter-panel select:hover {
