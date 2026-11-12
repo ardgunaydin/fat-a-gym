@@ -98,7 +98,7 @@ Documentation is kept in this repository under `docs/`: requirements documentati
 Fixed names that connect the parts written by different members:
 
 - **Muscle identifiers**, used in the SVG, the data file names and the code: `chest`, `back`, `shoulders`, `biceps`, `triceps`, `abs`, `legs`, `glutes`
-- **Page section ids**: `#anatomy-view`, `#exercise-list`, `#exercise-detail`, `#empty-state`, `#filter-panel`
+- **Page section ids**: `#anatomy-view`, `#filter-panel`, `#exercise-list`, `#exercise-detail`, `#workout-list`
 - **Muscle selection event**: the map dispatches `muscleSelected` with the muscle id in `detail.muscle`, and the exercise list listens for it
 - **Exercise data**: `data/chest.json` is the reference file, every other file copies its structure, field names never change
 
@@ -116,7 +116,7 @@ The full prioritized backlog is maintained on the Trello board.
 
 ## Project Status
 
-Sprint 1 is in progress: project setup, interactive muscle map, exercise data model and exercise display.
+Sprint 2 (30 October – 13 November 2026) is closing. The front and back muscle maps, the exercise list and detail panel, exercise search, favorites, filters and the workout builder with LocalStorage are on `main`. Seven of the eight muscle groups have exercise data with photos; `data/shoulders.json` has not been added yet, so the Shoulders region shows the empty-list message.
 
 ## Academic Information
 
