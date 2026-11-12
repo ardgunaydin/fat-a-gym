@@ -1,7 +1,7 @@
 # FATaGYM Sprint 2 Backlog
 
 **Sprint dates:** 30 October–13 November 2026  
-**Status reviewed:** 12 November 2026 for Arda's rows; other rows were last reviewed on 1 November 2026 and are confirmed by their owners
+**Status reviewed:** 12 November 2026 for Arda's, Tamara's and Feyza's rows; other rows were last reviewed on 1 November 2026
 
 ## Status legend
 
@@ -66,10 +66,10 @@
 
 | Week | Task | Priority | Story points | Status | Notes |
 |---|---|---:|---:|---|---|
-| 1 | Add persistent favorite exercises in `js/exercises.js` | Should | 3 | Needs confirmation | Use a separate storage key; do not edit `js/storage.js` |
-| 1 | Check data consistency across all eight `data/*.json` files | Must | 2 | Needs confirmation | Report schema, `place`, and missing-image problems to each file’s owner |
-| 2 | Add exercise search in `js/exercises.js` | Could | 3 | Needs confirmation | Clearing the search should restore the full list |
-| 2 | Update the data-format technical documentation and add exercise-viewing instructions to the user manual | Must | 3 | Needs confirmation | Include screenshots after 9 November |
+| 1 | Add persistent favorite exercises in `js/exercises.js` | Should | 3 | Done | Use a separate storage key; do not edit `js/storage.js` |
+| 1 | Check data consistency across all eight `data/*.json` files | Must | 2 | Done | Report schema, `place`, and missing-image problems to each file’s owner |
+| 2 | Add exercise search in `js/exercises.js` | Could | 3 | Done | Clearing the search should restore the full list |
+| 2 | Update the data-format technical documentation and add exercise-viewing instructions to the user manual | Must | 3 | Done | Include screenshots after 9 November |
 | If assigned | Create `data/shoulders.json` as backup | Must | 3 | Not assigned | Only if Ali’s file is still missing at the 6 November check and the team agrees |
 
 ## Shared documentation responsibilities
