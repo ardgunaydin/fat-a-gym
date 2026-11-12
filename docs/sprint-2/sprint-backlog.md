@@ -32,7 +32,7 @@
 | 2 | Implement FR-09 Workout Mode in `js/workout-builder.js` | Could | 8 | Deferred | Not started; moved to Sprint 3 after the 11 November feature freeze; estimate aligned with the Trello card (8 SP) |
 | 2 | Add photos to `data/legs.json` and `data/glutes.json` (Sprint 1 leftover) | Should | Part of the shared 5 SP card | Done | 20 photos from Free Exercise DB with captions (PR #21) |
 | 2 | Update `README.md` status and `docs/requirements.md` team responsibilities | Should | Not specified in plan | Done | Hassan added to the team responsibilities; page section ids and project status corrected |
-| End of sprint | Write `docs/sprint-2/summary-arda.docx` | Must | Not specified in plan | In Progress | Same structure as the Sprint 1 summary |
+| End of sprint | Write `docs/sprint-2/summary-arda.docx` | Must | Not specified in plan | Done | Same structure as the Sprint 1 summary |
 
 ## Ali
 
