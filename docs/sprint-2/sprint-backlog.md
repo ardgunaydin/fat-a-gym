@@ -55,11 +55,12 @@
 
 | Week | Task | Priority | Story points | Status | Notes |
 |---|---|---:|---:|---|---|
-| 1 | Style the exercise list, detail panel, empty state, and workout rows in `css/style.css` | Must | 3 | Needs confirmation | Exercise names and metadata should be readable on separate lines |
-| 1 | Add responsive map styles in `css/anatomy.css` | Must | 3 | Needs confirmation | Include selected, hover, sizing, and mobile styles |
-| 1 | Correct `place` values in `data/triceps.json` | Should | 1 | Needs confirmation | At least one dumbbell exercise should be available for home |
-| 2 | Complete the accessibility pass in `css/style.css` | Should | 3 | Needs confirmation | Visible focus, sufficient contrast, and image alt text |
-| 2 | Add the interface and styling sections to the technical documentation and user manual | Must | 2 | Needs confirmation | Include a phone screenshot after 9 November |
+| 1 | Style the exercise list, detail panel, empty state, and workout rows in `css/style.css` | Must | 3 | Done | Exercise names and metadata should be readable on separate lines |
+| 1 | Add responsive map styles in `css/anatomy.css` | Must | 3 | Done | Include selected, hover, sizing, and mobile styles |
+| 1 | Correct `place` values in `data/triceps.json` | Should | 1 | Done | At least one dumbbell exercise should be available for home |
+| 2 | Complete the accessibility pass in `css/style.css` | Should | 3 | Done | Visible focus, sufficient contrast, and image alt text |
+| 2 | Add the interface and styling sections to the technical documentation and user manual | Must | 2 | Done | Include a phone screenshot after 9 November |
+| 2 | Prevent hover effects on empty sections in `css/style.css` | Should | Not specified in plan | Done | Apply hover styling only to sections containing content |
 
 ## Feyza
 
