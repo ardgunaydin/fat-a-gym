@@ -530,21 +530,35 @@ The initial application does not require a backend server or external database.
 
 
 
-### Ali — Muscle Map
+### Ali — Front Muscle Map
 
 
 
 Responsible for:
 
-- SVG anatomy views
+- Front SVG anatomy view
 
-- Clickable muscle regions
+- Clickable front muscle regions
 
-- Muscle selection events
+- Muscle selection event (`muscleSelected`)
 
-- Muscle highlighting
+- Selected-muscle highlight
+
+
+
+### Hassan — Back Muscle Map and View Switching
+
+
+
+Responsible for:
+
+- Back SVG anatomy view
 
 - Front/back view switching
+
+- Muscle name tooltip on hover
+
+- Map styling
 
 
 

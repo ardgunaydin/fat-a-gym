@@ -1,7 +1,7 @@
 # FATaGYM Sprint 2 Backlog
 
 **Sprint dates:** 30 October–13 November 2026  
-**Status reviewed:** 1 November 2026
+**Status reviewed:** 12 November 2026 for Arda's rows; other rows were last reviewed on 1 November 2026 and are confirmed by their owners
 
 ## Status legend
 
@@ -9,6 +9,7 @@
 - **In Progress:** Work has started but is not complete.
 - **To Do:** Not started.
 - **Needs confirmation:** The owner’s current status has not been confirmed.
+- **Deferred:** Not done in this sprint and moved to a later sprint.
 
 ## Sprint milestones
 
@@ -24,12 +25,14 @@
 | Week | Task | Priority | Story points | Status | Notes |
 |---|---|---:|---:|---|---|
 | 1 | Create `docs/sprint-2/sprint-backlog.md` | Must | 2 | Done | Includes every member’s tasks, status, and story points |
-| 1 | Set up Trello for Sprint 2 | Must | 2 | To Do | Add cards, MoSCoW priority, story points, and assign everyone; add the missing story point label to the shared card |
+| 1 | Set up Trello for Sprint 2 | Must | 2 | Done | Every card has a MoSCoW and a story point label; the missing label was added to the shared card (SP 5); the Technical Documentation card was assigned; card statuses checked on 12 November |
 | 1 | Fix `docs/requirements.md` | Should | 1 | Done | Markdown formatting corrected and team size changed from four to five |
-| 2 | Add “Filtering exercises” and “Building and saving your workout” to `docs/user-manual.md` | Must | 3 | In Progress | Text added; screenshots are to be added after 9 November |
+| 2 | Add “Filtering exercises” and “Building and saving your workout” to `docs/user-manual.md` | Must | 3 | Done | Markdown formatting fixed and two screenshots added (PR #20) |
 | 2 | Add Arda’s section to `docs/technical-documentation.md` | Must | Not specified in plan | Done | Documents filters, workout builder, and LocalStorage |
-| 2 | Implement FR-09 Workout Mode in `js/workout-builder.js` | Could | 5 | To Do | Only if time permits and Must-Have work is complete; completion state must persist in LocalStorage |
-| End of sprint | Write `docs/sprint-2/summary-arda.docx` | Must | Not specified in plan | To Do | Use the teacher’s template |
+| 2 | Implement FR-09 Workout Mode in `js/workout-builder.js` | Could | 8 | Deferred | Not started; moved to Sprint 3 after the 11 November feature freeze; estimate aligned with the Trello card (8 SP) |
+| 2 | Add photos to `data/legs.json` and `data/glutes.json` (Sprint 1 leftover) | Should | Part of the shared 5 SP card | Done | 20 photos from Free Exercise DB with captions (PR #21) |
+| 2 | Update `README.md` status and `docs/requirements.md` team responsibilities | Should | Not specified in plan | Done | Hassan added to the team responsibilities; page section ids and project status corrected |
+| End of sprint | Write `docs/sprint-2/summary-arda.docx` | Must | Not specified in plan | Done | Same structure as the Sprint 1 summary |
 
 ## Ali
 
