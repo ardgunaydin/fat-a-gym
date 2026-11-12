@@ -65,3 +65,9 @@ The available equipment options depend on the selected muscle group. If no exerc
 ### When a muscle group has no exercises
 
 If the selected muscle group has no exercise data yet, the list shows the message **No exercises for this muscle yet.** If a search or a filter has no match, the list shows **No exercises match these filters.** The page keeps working, so you can select another muscle or clear the search box.
+
+![Shoulders selected on the body map with the message No exercises for this muscle
+yet](images/user-manual/no-exercises.png)
+
+![Exercise list with the search text zzz and the message No exercises match these
+filters](images/user-manual/no-search-match.png)
