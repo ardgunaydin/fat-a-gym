@@ -10,7 +10,7 @@
 
 The available equipment options depend on the selected muscle group. If no exercises match, the list displays a message.
 
-*Screenshot to be added after 9 November 2026.*
+![Filters panel with Place set to Home, showing only the home glute exercises](images/user-manual/filtering-exercises.png)
 
 ## Building and saving your workout
 
@@ -20,7 +20,7 @@ The available equipment options depend on the selected muscle group. If no exerc
 4. Select **Clear Workout** to remove every exercise from the workout.
 5. Your workout is saved automatically in this browser. It remains available after you refresh the page.
 
-*Screenshot to be added after 9 November 2026.*
+![Exercise details panel and My Workout list with three saved exercises](images/user-manual/building-your-workout.png)
 
 ## Viewing exercises and exercise details
 
