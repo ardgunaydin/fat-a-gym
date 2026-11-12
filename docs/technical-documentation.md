@@ -15,7 +15,7 @@ The project uses HTML, CSS, JavaScript, JSON exercise data, and browser LocalSto
 - `assets/exercises/` stores exercise photos.
 - `docs/` contains project documentation.
 
-## 3. Exercise Data
+## 3. Exercise Data — Feyza
 
 Exercise data is stored in a JSON file for each muscle group. Each file contains an array of exercise records.
 
@@ -107,6 +107,51 @@ The exercise list also handles a muscle that has no data file: instead of an err
 | `sets`, `reps`, `rest`, `steps` | Detail panel |
 
 Every record has to keep a non-empty `name`, because the list and the detail panel identify the exercise by its name.
+
+### Exercise search
+
+The exercise list has its own search box. `initializeExerciseSearch()` creates the box and places it
+inside the `#exercise-list` section as its first child, so the shared `index.html` file is not changed
+by this feature.
+
+| Function | Role |
+|---|---|
+| `initializeExerciseSearch()` | Builds the search box and listens for typing |
+| `matchesSearchTerm(exercise)` | Returns `true` when the exercise name contains the searched text |
+| `clearExerciseSearch()` | Empties the box and the searched text |
+
+The search compares lower-case text, so `BENCH` and `bench` give the same result. An empty box lets
+every exercise pass. `renderExerciseList()` keeps the full list it was given and draws only the records
+that pass `matchesSearchTerm()`, which means the search never deletes data: clearing the box brings the
+whole list back.
+
+The two empty messages stay separate. `No exercises for this muscle yet.` is shown when the muscle group
+has no data, and `No exercises match these filters.` is shown when records exist but the search or the
+filters leave nothing on screen.
+
+A new muscle group starts with an empty box: the `muscleSelected` handler calls `clearExerciseSearch()`
+before drawing the new list, in the same way as the filter panel starts again.
+
+### Favorite exercises
+
+Favorites are stored in the browser with `localStorage`, under the key `fatagym-favorites`. The stored
+value is a JSON array of exercise `id` values, which is why every record needs a unique `id`.
+
+| Function | Role |
+|---|---|
+| `getFavorites()` | Reads the saved array, and returns an empty array when nothing is saved |
+| `isFavorite(exerciseId)` | Tells whether one exercise is in the array |
+| `toggleFavorite(exerciseId)` | Adds the id when it is missing, removes it when it is there, then saves |
+
+The detail panel shows a button that reads `☆ Add to favorites` or `★ Remove from favorites`, depending
+on the current state. After a click the list is drawn again, so the star in the list line appears or
+disappears immediately, and the same exercise is opened again so the user does not lose the panel.
+
+Only the `id` is saved, not the whole record. The exercise data stays in the JSON files, so a corrected
+name or a new photo is picked up automatically, and no exercise is duplicated in the browser storage.
+Favorites survive a page reload because `localStorage` belongs to the browser, and the project has no
+backend.
+
 
 ## 4. HTML Structure — `index.html`
 
