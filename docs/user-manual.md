@@ -1,5 +1,15 @@
 # FATaGYM User Manual
 
+## Getting started and navigating the body map
+
+1. Open the FATaGYM application. The main page displays the application introduction and the body map.
+2. Select **Start Training** to jump to the main workout area.
+3. The body map initially displays the front view of the human body.
+4. Select **Front** or **Back** to switch between the front and back views.
+5. Click a muscle group on the body map to display its available exercises.
+
+![FATaGYM main page showing the introduction and interactive body map with Front and Back view buttons](images/user-manual/main-page.png)
+
 ## Filtering exercises
 
 1. Select a muscle on the body map to display its exercises.
@@ -29,7 +39,7 @@ The available equipment options depend on the selected muscle group. If no exerc
 3. Select an exercise to open the detail panel. The panel shows the photos of the exercise with their captions, the equipment, the place (home or gym), the difficulty, the number of sets, the repetitions, the rest time, and the numbered steps of the movement.
 4. Select another exercise at any time; the detail panel is replaced by the new one.
 
-*Screenshot to be added after 9 November 2026.*
+![Exercise list and details panel showing the selected exercise, its images, equipment, difficulty, and instructions](images/user-manual/viewing-exercises.png)
 
 ### Searching for an exercise by name
 
@@ -38,7 +48,9 @@ The available equipment options depend on the selected muscle group. If no exerc
 3. Clear the box to see the full list again.
 4. The search works together with the filters, and it is cleared automatically when you select a new muscle group.
 
-*Screenshot to be added after 9 November 2026.*
+![Exercise list with an empty search field showing all available exercises](images/user-manual/empty-search.png)
+
+![Exercise list filtered by the search letter "p", showing matching exercises](images/user-manual/results-search.png)
 
 ### Marking an exercise as a favorite
 
@@ -46,7 +58,9 @@ The available equipment options depend on the selected muscle group. If no exerc
 2. A star appears next to the exercise in the list, and the button changes to **Remove from favorites**.
 3. Your favorites are stored in this browser, so they are still marked after you refresh the page.
 
-*Screenshot to be added after 9 November 2026.*
+![Exercise details panel with the Add to favorites button](images/user-manual/add-to-favourites.png)
+
+![Exercise details panel with the Remove from favorites button and the favorite star in the exercise list](images/user-manual/remove-from-favourites.png)
 
 ### When a muscle group has no exercises
 
