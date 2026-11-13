@@ -12,11 +12,7 @@
 
 | Question | Answer |
 |---|---|
-| Implemented filter panel layout and styled exercise list, detail panel, empty states, and workout list. 
-Improved the existing anatomy map styling: muscle highlighting, hover effects, selected states, and responsive sizing. 
-Fixed home exercise place values in data/triceps.json.
-Improved accessibility and removed the unused empty-state element.
-Updated Technical Documentation and User Manual with instructions and screenshots. |
+| Finished tasks | Implemented filter panel layout and styled exercise list, detail panel, empty states, and workout list. Improved the existing anatomy map styling: muscle highlighting, hover effects, selected states, and responsive sizing. Fixed home exercise place values in data/triceps.json. Improved accessibility and removed the unused empty-state element.Updated Technical Documentation and User Manual with instructions and screenshots. |
 | Unfinished tasks | I completed all my assigned tasks, so there were no unfinished implementation or documentation tasks at the end of the sprint. |
 | What went well? | Working on both the interface and documentation helped me understand the project better and see how the different parts of the application work together. I successfully integrated my styling with the existing HTML and JavaScript and made the body map responsive on smaller screens. Creating screenshots for the User Manual was useful for checking the application from a user's perspective. Overall, I managed my workload well and completed everything I had planned. |
 | What (and how) could be improved? | I could improve my task management by keeping both Trello and the sprint backlog updated throughout the sprint. I should move Trello cards as soon as task statuses change and make sure the backlog accurately reflects completed and remaining work. I could also compare both regularly to ensure they stay consistent. This would make progress easier to track and help the team stay organized. |
