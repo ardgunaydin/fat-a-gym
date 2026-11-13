@@ -70,7 +70,7 @@
 | 1 | Check data consistency across all eight `data/*.json` files | Must | 2 | Done | Report schema, `place`, and missing-image problems to each file’s owner |
 | 2 | Add exercise search in `js/exercises.js` | Could | 3 | Done | Clearing the search should restore the full list |
 | 2 | Update the data-format technical documentation and add exercise-viewing instructions to the user manual | Must | 3 | Done | Include screenshots after 9 November |
-| If assigned | Create `data/shoulders.json` as backup | Must | 3 | Not assigned | Only if Ali’s file is still missing at the 6 November check and the team agrees |
+| If assigned | Create `data/shoulders.json` as backup | Must | 3 | Not assigned | A backup plan in case Ali's file was not finished in time; he continued working on it, so the task was never assigned to me |
 
 ## Shared documentation responsibilities
 
