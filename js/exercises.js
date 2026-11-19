@@ -16,6 +16,9 @@ let requestedExercises = [];
 // The text that is in the search box right now, in small letters.
 let searchTerm = "";
 
+// Only one rest timer runs at a time, so its id is kept here.
+let restTimerId = null;
+
 // The favorite exercises are kept in the browser under our own key,
 // so the saved workout of the workout builder is not touched.
 const FAVORITES_KEY = "fatagym-favorites";
@@ -177,6 +180,59 @@ function renderExerciseList(exercises) {
   }
 }
 
+// Writes a number of seconds as minutes and seconds, so 90 becomes 1:30.
+function formatRestTime(totalSeconds) {
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+
+  return minutes + ":" + String(seconds).padStart(2, "0");
+}
+
+// Counts the rest time of one exercise down to zero, one second at a time.
+function startRestCountdown(restSeconds, display) {
+  clearInterval(restTimerId);
+
+  let remainingSeconds = restSeconds;
+  display.textContent = formatRestTime(remainingSeconds);
+
+  restTimerId = setInterval(function () {
+    remainingSeconds = remainingSeconds - 1;
+    display.textContent = formatRestTime(remainingSeconds);
+
+    if (remainingSeconds <= 0) {
+      clearInterval(restTimerId);
+      restTimerId = null;
+    }
+  }, 1000);
+}
+
+// Builds the rest timer of one exercise: a start button and the remaining time.
+function createRestTimer(exercise) {
+  if (!exercise.rest) {
+    return null;
+  }
+
+  const container = document.createElement("div");
+  container.className = "rest-timer";
+
+  const display = document.createElement("span");
+  display.className = "rest-timer-time";
+  display.textContent = formatRestTime(exercise.rest);
+
+  const startButton = document.createElement("button");
+  startButton.className = "rest-timer-button";
+  startButton.textContent = "Start rest";
+
+  startButton.addEventListener("click", function () {
+    startRestCountdown(exercise.rest, display);
+  });
+
+  container.appendChild(startButton);
+  container.appendChild(display);
+
+  return container;
+}
+
 // Shows the details of one exercise.
 function showExerciseDetails(exercise) {
   const detailElement = document.getElementById("exercise-detail");
@@ -233,6 +289,12 @@ function showExerciseDetails(exercise) {
     " | Rest: " + exercise.rest + " seconds</p>" +
     "<h4>How to do it</h4>" +
     "<ol>" + stepsHtml + "</ol>";
+  
+  const restTimer = createRestTimer(exercise);
+
+  if (restTimer) {
+    detailElement.appendChild(restTimer);
+  }
 
   // The star button adds the exercise to the favorites or removes it from them.
   const favoriteButton = document.createElement("button");
