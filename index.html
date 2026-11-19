@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FATaGYM</title>
 
+  <script>
+  (function () {
+    try {
+      const savedTheme = localStorage.getItem('fatagym-theme');
+      const theme = savedTheme ||
+        (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/anatomy.css">
@@ -14,6 +28,7 @@
 
   <header class="site-header">
     <h1 class="site-title">FAT<span>a</span>GYM</h1>
+    <button id="theme-toggle" class="theme-toggle" type="button"></button>
   </header>
 
   <section class="hero">

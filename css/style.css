@@ -25,6 +25,20 @@
   --space-4: 2rem;
   --radius: 10px;
   --transition: 150ms ease;
+  --danger: var(--danger);       
+  color-scheme: dark;      
+}
+:root[data-theme="light"] {
+  --bg: #F3F0E6;
+  --surface: #FFFCF5;
+  --surface-2: #E8E9DC;
+  --line: #C9CDBB;
+  --text: #30382F;
+  --muted: #626B5D;
+  --accent: #388646;
+  --accent-ink: #FFFFFF;
+  --danger: #A94438;
+  color-scheme: light;
 }
 
 *,
@@ -69,6 +83,10 @@ a {
 }
 
 .site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
   padding: var(--space-2) var(--space-3);
   border-bottom: 1px solid var(--line);
 }
@@ -206,8 +224,8 @@ button:active,
   }
 
   #filter-panel button:hover {
-    color: #f87171;
-    border-color: #f87171;
+    color: var(--danger);
+    border-color: var(--danger);
   }
 }
 
@@ -433,8 +451,8 @@ button:active,
 /* Destructive actions turn red on hover */
 @media (hover: hover) {
   #workout-list button:hover {
-    color: #f87171;
-    border-color: #f87171;
+    color: var(--danger);
+    border-color: var(--danger);
     transform: none;
   }
 }
@@ -451,6 +469,20 @@ button:active,
 #workout-list ul {
   margin-bottom: var(--space-2);
 } 
+/* Theme switch button */
+.theme-toggle {
+  flex-shrink: 0;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+@media (hover: hover) {
+  .theme-toggle:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   * {
