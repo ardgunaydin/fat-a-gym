@@ -1,7 +1,7 @@
 # FATaGYM Sprint 2 Backlog
 
 **Sprint dates:** 30 October–13 November 2026  
-**Status reviewed:** 12 November 2026 for Arda's rows; other rows were last reviewed on 1 November 2026 and are confirmed by their owners
+**Status reviewed:** 12 November 2026 for Arda's, Tamara's and Feyza's rows; other rows were last reviewed on 1 November 2026
 
 ## Status legend
 
@@ -55,21 +55,22 @@
 
 | Week | Task | Priority | Story points | Status | Notes |
 |---|---|---:|---:|---|---|
-| 1 | Style the exercise list, detail panel, empty state, and workout rows in `css/style.css` | Must | 3 | Needs confirmation | Exercise names and metadata should be readable on separate lines |
-| 1 | Add responsive map styles in `css/anatomy.css` | Must | 3 | Needs confirmation | Include selected, hover, sizing, and mobile styles |
-| 1 | Correct `place` values in `data/triceps.json` | Should | 1 | Needs confirmation | At least one dumbbell exercise should be available for home |
-| 2 | Complete the accessibility pass in `css/style.css` | Should | 3 | Needs confirmation | Visible focus, sufficient contrast, and image alt text |
-| 2 | Add the interface and styling sections to the technical documentation and user manual | Must | 2 | Needs confirmation | Include a phone screenshot after 9 November |
+| 1 | Style the exercise list, detail panel, empty state, and workout rows in `css/style.css` | Must | 3 | Done | Exercise names and metadata should be readable on separate lines |
+| 1 | Add responsive map styles in `css/anatomy.css` | Must | 3 | Done | Include selected, hover, sizing, and mobile styles |
+| 1 | Correct `place` values in `data/triceps.json` | Should | 1 | Done | At least one dumbbell exercise should be available for home |
+| 2 | Complete the accessibility pass in `css/style.css` | Should | 3 | Done | Visible focus, sufficient contrast, and image alt text |
+| 2 | Add the interface and styling sections to the technical documentation and user manual | Must | 2 | Done | Include a phone screenshot after 9 November |
+| 2 | Prevent hover effects on empty sections in `css/style.css` | Should | Not specified in plan | Done | Apply hover styling only to sections containing content |
 
 ## Feyza
 
 | Week | Task | Priority | Story points | Status | Notes |
 |---|---|---:|---:|---|---|
-| 1 | Add persistent favorite exercises in `js/exercises.js` | Should | 3 | Needs confirmation | Use a separate storage key; do not edit `js/storage.js` |
-| 1 | Check data consistency across all eight `data/*.json` files | Must | 2 | Needs confirmation | Report schema, `place`, and missing-image problems to each file’s owner |
-| 2 | Add exercise search in `js/exercises.js` | Could | 3 | Needs confirmation | Clearing the search should restore the full list |
-| 2 | Update the data-format technical documentation and add exercise-viewing instructions to the user manual | Must | 3 | Needs confirmation | Include screenshots after 9 November |
-| If assigned | Create `data/shoulders.json` as backup | Must | 3 | Not assigned | Only if Ali’s file is still missing at the 6 November check and the team agrees |
+| 1 | Add persistent favorite exercises in `js/exercises.js` | Should | 3 | Done | Use a separate storage key; do not edit `js/storage.js` |
+| 1 | Check data consistency across all eight `data/*.json` files | Must | 2 | Done | Report schema, `place`, and missing-image problems to each file’s owner |
+| 2 | Add exercise search in `js/exercises.js` | Could | 3 | Done | Clearing the search should restore the full list |
+| 2 | Update the data-format technical documentation and add exercise-viewing instructions to the user manual | Must | 3 | Done | Include screenshots after 9 November |
+| If assigned | Create `data/shoulders.json` as backup | Must | 3 | Not assigned | A backup plan in case Ali's file was not finished in time; he continued working on it, so the task was never assigned to me |
 
 ## Shared documentation responsibilities
 
