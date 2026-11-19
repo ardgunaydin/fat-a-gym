@@ -1,3 +1,27 @@
+// Workout Mode (FR-09, first part): ids of the exercises marked as completed.
+// The state is kept in memory for now; saving it in LocalStorage is the second part.
+const completedExerciseIds = new Set();
+
+function isExerciseCompleted(exerciseId) {
+  return completedExerciseIds.has(exerciseId);
+}
+
+function toggleExerciseCompleted(exerciseId) {
+  if (completedExerciseIds.has(exerciseId)) {
+    completedExerciseIds.delete(exerciseId);
+    return false;
+  }
+
+  completedExerciseIds.add(exerciseId);
+  return true;
+}
+
+function countCompletedExercises(workout) {
+  return workout.filter(function (exercise) {
+    return isExerciseCompleted(exercise.id);
+  }).length;
+}
+
 function addExerciseToWorkout(exercise) {
   const currentWorkout = loadWorkout();
 
@@ -23,6 +47,7 @@ function removeExerciseFromWorkout(exerciseId) {
   );
 
   saveWorkout(updatedWorkout);
+  completedExerciseIds.delete(exerciseId);
 
   return updatedWorkout;
 }
@@ -33,6 +58,7 @@ function getCurrentWorkout() {
 
 function clearCurrentWorkout() {
   clearWorkout();
+  completedExerciseIds.clear();
   return [];
 }
 
