@@ -200,6 +200,7 @@ function runRestCountdown(display) {
 
     if (restRemainingSeconds <= 0) {
       stopRestCountdown();
+      display.textContent = "Rest finished";
     }
   }, 1000);
 }
