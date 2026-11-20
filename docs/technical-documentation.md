@@ -134,7 +134,7 @@ before drawing the new list, in the same way as the filter panel starts again.
 
 ### Favorite exercises
 
-Favorites are stored in the browser with `localStorage`, under the key `fatagym-favorites`. The stored
+Favorites are stored  the browser with `localStorage`, under the key `fatagym-favorites`. The stored
 value is a JSON array of exercise `id` values, which is why every record needs a unique `id`.
 
 | Function | Role |
@@ -307,3 +307,100 @@ The filter panel is created by `initializeFilterPanel()`. It provides Difficulty
 ### LocalStorage
 
 `js/storage.js` saves the workout as JSON in LocalStorage under the key `fat-a-gym-workout`. `loadWorkout()` returns the saved exercise array or an empty array when there is no valid saved workout. `clearWorkout()` removes the saved item. The workout list is rendered when the page loads, so saved exercises remain visible after a refresh.
+## Front Muscle Map and Click Event
+
+### Purpose
+The front muscle map lets the user pick a muscle by clicking on a body picture. The map does not show any exercises itself. It only tells the rest of the app which muscle was clicked. The exercise list and the filters listen to that message.
+
+### Files
+| File | Role |
+|---|---|
+| `index.html` | Contains the empty `<section id="anatomy-view">` where the map is placed. |
+| `js/anatomy.js` | Builds the map inside `#anatomy-view` and handles the click. |
+| `css/anatomy.css` | Size of the map and the clickable areas. Colours are in the map styling. |
+| `assets/anatomy/body.webp` | The shared body picture (960 × 837 px). Front view on the left half, back view on the right half. |
+
+### How the map is built
+`js/anatomy.js` puts one SVG into `#anatomy-view`. The SVG has two layers:
+
+1. The body picture (`<image>`), which is only for looking at.
+2. Transparent shapes (`<polygon>`) on top of the picture, one for each clickable muscle area.
+
+The front view uses the left half of the picture (`viewBox="0 0 480 837"`). The coordinates of the shapes were measured on the picture itself, and the right side of the body mirrors the left side. The front and the back view come from the same picture, so they have the same scale.
+
+Every muscle shape has two attributes:
+
+```html
+<polygon class="muscle" data-muscle="shoulders" points="..."/>
+```
+
+- `class="muscle"` marks the shape as clickable.
+- `data-muscle` holds the name of the muscle: `chest`, `shoulders`, `biceps`, `abs` or `legs`.
+
+The shapes have **no HTML id**. The same muscle exists in the front and in the back view, and two equal ids on one page would break the page. Left and right parts of one muscle share the same `data-muscle` value.
+
+### Click handling
+There is **one** click listener, on `#anatomy-view`, and not one listener for each shape (event delegation). When the user clicks:
+
+1. `event.target.closest('.muscle')` finds the clicked muscle shape. A click on the empty background does nothing.
+2. The class `selected` is removed from the previously selected shape and added to the clicked one. The class only marks the selection. The colour is written in the stylesheet.
+3. The `muscleSelected` event is sent.
+
+Because the listener is on the container, the back view needs no new click code. Any new shape with `class="muscle"` and a `data-muscle` value works automatically.
+
+Simplified code:
+
+```js
+view.addEventListener('click', (event) => {
+    const muscle = event.target.closest('.muscle');
+    if (!muscle || !view.contains(muscle)) return;
+
+    view.querySelectorAll('.muscle.selected')
+        .forEach((el) => el.classList.remove('selected'));
+    muscle.classList.add('selected');
+
+    view.dispatchEvent(new CustomEvent('muscleSelected', {
+        bubbles: true,
+        detail: { muscle: muscle.dataset.muscle }
+    }));
+});
+```
+
+### The `muscleSelected` event
+| Property | Value |
+|---|---|
+| Event name | `muscleSelected` |
+| Sent on | `#anatomy-view`, with `bubbles: true`, so a listener on `document` or `window` also receives it |
+| Data | `event.detail.muscle`, a string with the `data-muscle` value |
+
+Example of a listener:
+
+```js
+document.addEventListener('muscleSelected', (event) => {
+    console.log(event.detail.muscle); // for example "shoulders"
+});
+```
+
+The exercise list uses the muscle name to load the matching data file (`data/<muscle>.json`, for example `data/shoulders.json`) and shows its exercises. If a data file does not exist or is empty, the list shows the message "No exercises for this muscle yet."
+
+### Muscle names
+| `data-muscle` | Area on the front view |
+|---|---|
+| `chest` | Both chest muscles |
+| `shoulders` | Both shoulder muscles |
+| `biceps` | Both upper arms |
+| `abs` | Stomach and side of the waist |
+| `legs` | Thighs and lower legs |
+
+The names must be written exactly like this (lower case, plural where shown), because they are also used as the names of the data files.
+
+### How to add or change a muscle area
+1. Open `assets/anatomy/body.webp` and find the corners of the new area. The coordinates are the pixel positions on the 960 × 837 picture.
+2. Add a `<polygon class="muscle" data-muscle="name" points="x1,y1 x2,y2 ..."/>` in `js/anatomy.js`. Do not add an id.
+3. Add `data/name.json` in the exercise data format.
+4. Check in the browser that a click shows the exercises.
+
+### Known limits
+- The clickable areas are hand-measured polygons and follow the muscle outlines only roughly. A drawing with a separate SVG path for each muscle would be more exact.
+- Forearms, neck and hands are not clickable.
+- The source and the licence of the body picture still have to be documented.

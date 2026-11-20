@@ -1,0 +1,107 @@
+[
+  {
+    "id": "overhead-press",
+    "name": "Overhead Barbell Press",
+    "image": "assets/exercises/overhead-press.jpg",
+    "imageCaption": "Overhead barbell press, starting position (Free Exercise DB)",
+    "imageEnd": "assets/exercises/overhead-press-end.jpg",
+    "imageEndCaption": "Step 3: the bar is pushed above the head (Free Exercise DB)",
+    "muscle": "shoulders",
+    "equipment": "barbell",
+    "place": "gym",
+    "difficulty": "intermediate",
+    "sets": 3,
+    "reps": "6-8",
+    "rest": 90,
+    "steps": [
+      "Stand with your feet about shoulder width apart and hold the bar at shoulder height.",
+      "Tighten your stomach and keep your back straight.",
+      "Push the bar straight up until your arms are straight above your head.",
+      "Lower the bar slowly back to your shoulders."
+    ]
+  },
+  {
+    "id": "dumbbell-shoulder-press",
+    "name": "Dumbbell Shoulder Press",
+    "image": "assets/exercises/dumbbell-shoulder-press.jpg",
+    "imageCaption": "Dumbbell shoulder press, starting position (Free Exercise DB)",
+    "imageEnd": "assets/exercises/dumbbell-shoulder-press-end.jpg",
+    "imageEndCaption": "Step 3: the dumbbells are pushed above the head (Free Exercise DB)",
+    "muscle": "shoulders",
+    "equipment": "dumbbell",
+    "place": "home",
+    "difficulty": "beginner",
+    "sets": 3,
+    "reps": "10-12",
+    "rest": 60,
+    "steps": [
+      "Sit on a bench with back support and hold one dumbbell in each hand at shoulder height.",
+      "Keep your feet flat on the floor and your wrists straight.",
+      "Push the dumbbells up until your arms are straight.",
+      "Lower the dumbbells slowly back to shoulder height."
+    ]
+  },
+  {
+    "id": "lateral-raise",
+    "name": "Dumbbell Lateral Raise",
+    "image": "assets/exercises/dumbbell-raise.jpg",
+    "imageCaption": "Dumbbell lateral raise, starting position (Free Exercise DB)",
+    "imageEnd": "assets/exercises/dumbbell-raise-end.jpg",
+    "imageEndCaption": "Step 3: the arms are raised to shoulder height (Free Exercise DB)",
+    "muscle": "shoulders",
+    "equipment": "dumbbell",
+    "place": "home",
+    "difficulty": "beginner",
+    "sets": 3,
+    "reps": "12-15",
+    "rest": 60,
+    "steps": [
+      "Stand with one dumbbell in each hand at your sides and your knees a little bent.",
+      "Keep a small bend in your elbows.",
+      "Lift your arms out to the sides until they reach shoulder height.",
+      "Lower the dumbbells slowly to the start position."
+    ]
+  },
+  {
+    "id": "face-pull",
+    "name": "Cable Face Pull",
+    "image": "assets/exercises/face-pull.jpg",
+    "imageCaption": "Cable face pull, starting position (Free Exercise DB)",
+    "imageEnd": "assets/exercises/face-pull-end.jpg",
+    "imageEndCaption": "Step 3: the rope is pulled to the face (Free Exercise DB)",
+    "muscle": "shoulders",
+    "equipment": "cable",
+    "place": "gym",
+    "difficulty": "intermediate",
+    "sets": 3,
+    "reps": "12-15",
+    "rest": 60,
+    "steps": [
+      "Set the cable at face height, attach a rope and hold it with both hands.",
+      "Step back until your arms are straight and keep your body steady.",
+      "Pull the rope towards your face and move your elbows out to the sides.",
+      "Squeeze your upper back, then return slowly to the start position."
+    ]
+  },
+  {
+    "id": "arnold-press",
+    "name": "Arnold Press",
+    "image": "assets/exercises/arnold-press.jpg",
+    "imageCaption": "Arnold press, starting position (Free Exercise DB)",
+    "imageEnd": "assets/exercises/arnold-press-end.jpg",
+    "imageEndCaption": "Step 3: the arms are straight above the head with the palms forward (Free Exercise DB)",
+    "muscle": "shoulders",
+    "equipment": "dumbbell",
+    "place": "home",
+    "difficulty": "intermediate",
+    "sets": 3,
+    "reps": "8-10",
+    "rest": 75,
+    "steps": [
+      "Sit with one dumbbell in each hand in front of your chest and your palms facing you.",
+      "Push the dumbbells up and turn your palms to face forward while you press.",
+      "Stop when your arms are straight above your head.",
+      "Lower the dumbbells slowly and turn your palms back towards you."
+    ]
+  }
+]

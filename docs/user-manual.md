@@ -71,3 +71,27 @@ yet](images/user-manual/no-exercises.png)
 
 ![Exercise list with the search text zzz and the message No exercises match these
 filters](images/user-manual/no-search-match.png)
+## Opening the app and selecting a muscle
+
+### Opening the app
+1. Open the project folder in Visual Studio Code.
+2. Right-click `index.html` and choose **Open with Live Server**. The app opens in the browser at `http://127.0.0.1:5500/index.html`.
+3. Do not open `index.html` by double-clicking it, because then the exercise data cannot be loaded.
+
+### Finding the body map
+On the home page, press the green **Start training** button. The page moves down to the body map. The filters and the exercise list are next to the map.
+
+### Selecting a muscle
+1. Use the **Front** and **Back** buttons next to the picture to turn the body.
+2. Click the muscle you want to train: chest, shoulders, biceps, abs or legs. Both sides of the body work in the same way.
+3. The muscle you clicked turns green. If you click another muscle, the first one goes back to its normal colour.
+4. The exercises for this muscle appear in the list next to the map. Click an exercise to see its photos and steps.
+
+![The shoulders selected on the muscle map and the list of five shoulder exercises](images/select-muscle.png)
+
+*Figure: the shoulders are selected and the exercise list shows five exercises.*
+
+### Good to know
+- If you click an empty place next to the body, nothing changes.
+- The filters (difficulty, equipment, place) change which exercises are shown for the selected muscle. Use **Clear filters** to see all of them again.
+- If the list says "No exercises for this muscle yet.", there is no exercise data for that muscle at the moment.
