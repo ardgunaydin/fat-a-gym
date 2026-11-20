@@ -16,8 +16,9 @@ let requestedExercises = [];
 // The text that is in the search box right now, in small letters.
 let searchTerm = "";
 
-// Only one rest timer runs at a time, so its id is kept here.
+// Only one rest timer runs at a time, so its id and its remaining time are kept here.
 let restTimerId = null;
+let restRemainingSeconds = 0;
 
 // The favorite exercises are kept in the browser under our own key,
 // so the saved workout of the workout builder is not touched.
@@ -188,25 +189,35 @@ function formatRestTime(totalSeconds) {
   return minutes + ":" + String(seconds).padStart(2, "0");
 }
 
-// Counts the rest time of one exercise down to zero, one second at a time.
-function startRestCountdown(restSeconds, display) {
+// Counts the remaining rest time down to zero, one second at a time.
+function runRestCountdown(display) {
+  // Only one countdown may run, so an older one is removed first.
   clearInterval(restTimerId);
 
-  let remainingSeconds = restSeconds;
-  display.textContent = formatRestTime(remainingSeconds);
-
   restTimerId = setInterval(function () {
-    remainingSeconds = remainingSeconds - 1;
-    display.textContent = formatRestTime(remainingSeconds);
+    restRemainingSeconds = restRemainingSeconds - 1;
+    display.textContent = formatRestTime(restRemainingSeconds);
 
-    if (remainingSeconds <= 0) {
-      clearInterval(restTimerId);
-      restTimerId = null;
+    if (restRemainingSeconds <= 0) {
+      stopRestCountdown();
     }
   }, 1000);
 }
 
-// Builds the rest timer of one exercise: a start button and the remaining time.
+// Stops the countdown but keeps the remaining time on the display.
+function stopRestCountdown() {
+  clearInterval(restTimerId);
+  restTimerId = null;
+}
+
+// Puts the rest time back to the full value of the exercise and shows it.
+function resetRestCountdown(restSeconds, display) {
+  stopRestCountdown();
+  restRemainingSeconds = restSeconds;
+  display.textContent = formatRestTime(restSeconds);
+}
+
+// Builds the rest timer of one exercise: the start, pause and reset buttons and the remaining time.
 function createRestTimer(exercise) {
   if (!exercise.rest) {
     return null;
@@ -217,17 +228,43 @@ function createRestTimer(exercise) {
 
   const display = document.createElement("span");
   display.className = "rest-timer-time";
-  display.textContent = formatRestTime(exercise.rest);
+
+  // Opening another exercise stops the old countdown and shows the new rest time.
+  resetRestCountdown(exercise.rest, display);
 
   const startButton = document.createElement("button");
   startButton.className = "rest-timer-button";
   startButton.textContent = "Start rest";
 
+  const pauseButton = document.createElement("button");
+  pauseButton.className = "rest-timer-button";
+  pauseButton.textContent = "Pause";
+
+  const resetButton = document.createElement("button");
+  resetButton.className = "rest-timer-button";
+  resetButton.textContent = "Reset";
+
   startButton.addEventListener("click", function () {
-    startRestCountdown(exercise.rest, display);
+    // After a finished rest the start button begins a new full rest.
+    if (restRemainingSeconds <= 0) {
+      restRemainingSeconds = exercise.rest;
+      display.textContent = formatRestTime(restRemainingSeconds);
+    }
+
+    runRestCountdown(display);
+  });
+
+  pauseButton.addEventListener("click", function () {
+    stopRestCountdown();
+  });
+
+  resetButton.addEventListener("click", function () {
+    resetRestCountdown(exercise.rest, display);
   });
 
   container.appendChild(startButton);
+  container.appendChild(pauseButton);
+  container.appendChild(resetButton);
   container.appendChild(display);
 
   return container;
