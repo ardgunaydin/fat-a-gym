@@ -62,6 +62,18 @@ The available equipment options depend on the selected muscle group. If no exerc
 
 ![Exercise details panel with the Remove from favorites button and the favorite star in the exercise list](images/user-manual/remove-from-favourites.png)
 
+### Using the rest timer
+
+1. Open an exercise in the list. Under the steps you see the rest time of that exercise, for example **Rest: 90 seconds**, with the buttons **Start rest**, **Pause** and **Reset**.
+2. Select **Start rest** when your set is finished. The time counts down, for example from 1:30.
+3. Select **Pause** to stop the countdown. The remaining time stays on screen, and **Start rest** continues from there.
+4. Select **Reset** to go back to the full rest time of the exercise.
+5. When the time reaches zero, the display shows **Rest finished**. The next **Start rest** begins a new rest.
+
+![Exercise details panel with the rest time and the Start rest, Pause and Reset buttons](images/user-manual/rest-timer.png)
+
+![Rest timer showing Rest finished when the countdown reaches zero](images/user-manual/rest-finished.png)
+
 ### When a muscle group has no exercises
 
 If the selected muscle group has no exercise data yet, the list shows the message **No exercises for this muscle yet.** If a search or a filter has no match, the list shows **No exercises match these filters.** The page keeps working, so you can select another muscle or clear the search box.
