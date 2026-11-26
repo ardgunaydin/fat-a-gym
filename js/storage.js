@@ -23,3 +23,30 @@ function loadWorkout() {
 function clearWorkout() {
   localStorage.removeItem(WORKOUT_STORAGE_KEY);
 }
+
+// Workout Mode (FR-09, second part): ids of the exercises marked as completed.
+const COMPLETED_STORAGE_KEY = "fat-a-gym-completed";
+
+function saveCompletedExercises(exerciseIds) {
+  localStorage.setItem(COMPLETED_STORAGE_KEY, JSON.stringify(exerciseIds));
+}
+
+function loadCompletedExercises() {
+  const savedIds = localStorage.getItem(COMPLETED_STORAGE_KEY);
+
+  if (!savedIds) {
+    return [];
+  }
+
+  try {
+    const exerciseIds = JSON.parse(savedIds);
+    return Array.isArray(exerciseIds) ? exerciseIds : [];
+  } catch (error) {
+    console.error("Could not read the completed exercises:", error);
+    return [];
+  }
+}
+
+function clearCompletedExercises() {
+  localStorage.removeItem(COMPLETED_STORAGE_KEY);
+}
