@@ -1,7 +1,7 @@
 # FATaGYM Sprint 3 Backlog
 
 **Sprint dates:** 13–27 November 2026  
-**Status reviewed:** 26 November 2026 for Arda's rows; other rows were last reviewed on 19 November 2026
+**Status reviewed:** 26 November 2026; every row was checked against `main` and the updated Sprint 3 plan of 26 November
 
 ## Status legend
 
@@ -24,19 +24,21 @@
 
 | Week | Task | Priority | Story points | Status | Notes |
 |---|---|---:|---:|---|---|
-| Sprint 2 leftover | Close the open Sprint 2 items (see Week 1 tasks and Week 2 documentation) | Must | Included below | To Do | `data/shoulders.json` is not on `main`; `index.html` closing tag and repository root need repair |
-| 1 | Create `data/shoulders.json` | Must | 3 | To Do | Five exercises with the 14 fields of `data/chest.json`, two photos each and valid `place` values; commit 473cf14 changed only `index.html` and added a `fat-a-gym` entry |
-| 1 | Repair the page structure in `index.html` | Must | 1 | To Do | Restore `</header>` on line 17 and remove the empty `fat-a-gym` entry from the repository root |
-| 2 | Add the front map and click-event sections to the technical documentation and user manual | Must | 2 | Needs confirmation | User manual section “Opening the app and selecting a muscle” with a screenshot |
+| Sprint 2 leftover | Close the open Sprint 2 items (see Week 1 tasks and Week 2 documentation) | Must | Included below | In Progress | Shoulders data and documentation are done; the `index.html` repair is not complete (see below) |
+| 1 | Create `data/shoulders.json` | Must | 3 | Done | Five exercises with photos and valid `place` values (commit b5fa940) |
+| 1 | Repair the page structure in `index.html` | Must | 1 | In Progress | `</header>` is in place, but line 34 still reads `</headerhttps://github.com/ardgunaydin/fat-a-gym.git` and the empty `fat-a-gym` entry is still in the repository root; carried over to Sprint 4 if not fixed by 27 November |
+| 2 | Add the front map and click-event sections to the technical documentation and user manual | Must | 2 | Done | “Front Muscle Map and Click Event” and “Opening the app and selecting a muscle” sections (commit b5fa940) |
+| 2 | Muscle heatmap, front view, in `js/anatomy.js` (pulled from Sprint 4 on 26 November) | Should | 4 | To Do | Count how often each muscle was trained and write `data-intensity` 0–3 on the front regions; not on `main` yet |
 
 ## Hassan
 
 | Week | Task | Priority | Story points | Status | Notes |
 |---|---|---:|---:|---|---|
-| Sprint 2 leftover | Add `docs/sprint-1/summary-hassan` and `docs/sprint-2/summary-hassan` | Must | Not specified in plan | Needs confirmation | Both files are missing from the repository |
-| 1 | Real-device test of the front and back map (NFR-02) | Must | 2 | Needs confirmation | Screenshot and list of small touch targets in the repository or on the Trello card |
-| 1 | Browser compatibility test in Chrome, Firefox and Edge (NFR-04) | Must | 3 | Needs confirmation | Fix own files and report the rest to the owners; differences written down |
-| 2 | Add the back-view and switching sections to the technical documentation and user manual | Must | 2 | Needs confirmation | User manual section “Switching between front and back view” with a screenshot |
+| Sprint 2 leftover | Add `docs/sprint-1/summary-hassan` and `docs/sprint-2/summary-hassan` | Must | Not specified in plan | To Do | Both files are missing from the repository |
+| 1 | Real-device test of the front and back map (NFR-02) | Must | 2 | To Do | Screenshot and list of small touch targets in the repository or on the Trello card |
+| 1 | Browser compatibility test in Chrome, Firefox and Edge (NFR-04) | Must | 3 | To Do | Fix own files and report the rest to the owners; differences written down |
+| 2 | Add the back-view and switching sections to the technical documentation and user manual | Must | 2 | To Do | User manual section “Switching between front and back view” with a screenshot |
+| 2 | Muscle heatmap colours and back view in `css/anatomy.css` and `js/anatomy-view.js` (pulled from Sprint 4 on 26 November) | Should | 4 | To Do | Four-step colour scale for `data-intensity` 0–3 and the same values on the back regions; contrast as required by NFR-07 |
 
 ## Arda
 
@@ -53,31 +55,35 @@
 | Week | Task | Priority | Story points | Status | Notes |
 |---|---|---:|---:|---|---|
 | Sprint 2 leftover | None | — | — | — | — |
-| 1 | Light and dark theme switching in `css/style.css` | Could | 5 | Needs confirmation | The choice is kept in the browser; both themes keep the contrast required by NFR-07 |
-| 2 | Add the theme and colour-variable sections to the technical documentation and user manual | Must | 2 | Needs confirmation | User manual section on switching the theme with a screenshot |
+| 1 | Light and dark theme switching in `css/style.css` | Could | 5 | Done | The choice is kept in the browser under `fatagym-theme` (19 November) |
+| 2 | Add the theme and colour-variable sections to the technical documentation and user manual | Must | 2 | To Do | User manual section on switching the theme with a screenshot; not on `main` yet |
+| 2 | Styles for the new components in `css/style.css` (pulled from Sprint 4 on 26 November) | Could | 3 | To Do | Heatmap legend, rest timer control and workout history list, in both themes |
 
 ## Feyza
 
 | Week | Task | Priority | Story points | Status | Notes |
 |---|---|---:|---:|---|---|
 | Sprint 2 leftover | None | — | — | — | — |
-| 1 | Rest timer in `js/exercises.js` | Could | 4 | Needs confirmation | First version is on `main` (commit 1da6659); the timer counts down the rest value and can be stopped |
-| 1 | Data consistency check across all eight `data/*.json` files (NFR-06) | Must | 2 | To Do | Starts after `data/shoulders.json` is on `main`; findings are shared with the team |
-| 2 | Add the rest-timer sections to the technical documentation and user manual | Must | 2 | Needs confirmation | User manual section “Using the rest timer” with a screenshot |
+| 1 | Rest timer in `js/exercises.js` | Could | 4 | Done | Countdown, pause, reset and a message when the rest is over (19–20 November) |
+| 1 | Data consistency check across all eight `data/*.json` files (NFR-06) | Must | 2 | Done | Marked as done in the 26 November plan; the result was shared with the team, not stored in the repository |
+| 2 | Add the rest-timer sections to the technical documentation and user manual | Must | 2 | Done | Rest timer sections and screenshots (26 November) |
+| 2 | Workout history in `js/history.js` (FR-10, pulled from Sprint 4 on 26 November) | Could | 4 | To Do | Saved workouts listed with date and muscles, newest first; not on `main` yet |
 
 ## Shared responsibilities
 
 | Deliverable | Owner | Priority | Story points | Status | Notes |
 |---|---|---:|---:|---|---|
-| Write `docs/sprint-3/summary-<name>.docx` | All members | Must | Not specified in plan | To Do | Teacher’s template, by 27 November |
-| Add each person’s section to `docs/technical-documentation.md` and `docs/user-manual.md` | All members | Must | Included in individual tasks above | Needs confirmation | Each person documents their own work |
+| Write `docs/sprint-3/summary-<name>.docx` | All members | Must | Not specified in plan | In Progress | Teacher’s template, by 27 November; Arda’s summary is added with this update |
+| Add each person’s section to `docs/technical-documentation.md` and `docs/user-manual.md` | All members | Must | Included in individual tasks above | In Progress | Ali, Arda and Feyza have added their Sprint 3 sections; Hassan’s and Tamara’s are still open |
 | Keep own Trello cards up to date | All members | Must | Not specified in plan | Needs confirmation | Finished cards to Done, unfinished cards back to Backlog |
 
 ## Planned for Sprint 4
 
-- Muscle heatmap (README, Planned)
-- FR-10 Workout history and basic progress statistics
-- Styles for the new components
+The muscle heatmap, the second part of Workout Mode, workout history and the styles of the new components were pulled into week 2 of this sprint on 26 November. Sprint 4 keeps:
+
+- The progress statistics part of FR-10
+- The items the teacher added from the Won’t Have list
+- Every task above that is not finished by the review on 27 November
 
 ## Sprint rules
 
