@@ -152,6 +152,24 @@ name or a new photo is picked up automatically, and no exercise is duplicated in
 Favorites survive a page reload because `localStorage` belongs to the browser, and the project has no
 backend.
 
+### Rest timer
+
+Every exercise record carries a `rest` value in seconds, so the rest between sets comes from the data and is not a fixed number in the code. `createRestTimer(exercise)` builds the timer inside the detail panel and returns `null` when a record has no rest value, so older records keep working.
+
+| Function | Role |
+|---|---|
+| `createRestTimer(exercise)` | Builds the Start rest, Pause and Reset buttons and the remaining time |
+| `runRestCountdown(display)` | Counts the remaining seconds down once per second |
+| `stopRestCountdown()` | Stops the countdown and keeps the remaining time on screen |
+| `resetRestCountdown(restSeconds, display)` | Puts the time back to the rest value of the exercise |
+| `formatRestTime(totalSeconds)` | Writes seconds as minutes and seconds, so 90 becomes 1:30 |
+
+Only one rest can run at a time, so the interval id `restTimerId` and the remaining time `restRemainingSeconds` are kept in two variables of the file instead of inside the buttons. `runRestCountdown()` starts with `clearInterval(restTimerId)`, so a second click on Start rest cannot create a second interval that counts down twice as fast.
+
+Pause and Reset do two different things. Pause stops the interval and leaves the remaining time on the display, so Start rest continues from 1:12. Reset puts the full rest value of the exercise back. When the countdown reaches zero the display shows `Rest finished`, and the next click on Start rest begins a new full rest.
+
+Opening another exercise calls `resetRestCountdown()` while the panel is built, so a timer left running on the previous exercise stops and the new rest value is shown. The feature stays inside `js/exercises.js` and the detail panel; the shared `index.html` and `js/storage.js` are not touched.
+
 
 ## 4. HTML Structure — `index.html`
 
