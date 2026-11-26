@@ -325,6 +325,32 @@ The filter panel is created by `initializeFilterPanel()`. It provides Difficulty
 ### LocalStorage
 
 `js/storage.js` saves the workout as JSON in LocalStorage under the key `fat-a-gym-workout`. `loadWorkout()` returns the saved exercise array or an empty array when there is no valid saved workout. `clearWorkout()` removes the saved item. The workout list is rendered when the page loads, so saved exercises remain visible after a refresh.
+
+### Workout mode (FR-09)
+
+Workout mode lets the user work through the saved workout one exercise at a time. It is built in `js/workout-builder.js` and keeps its state through `js/storage.js`.
+
+Each row in My Workout has a **Mark as done** button next to Remove. A completed row shows a check mark, a struck-through name and an accent border, and its button changes to **Undo**. The button sets `aria-pressed`, so screen readers announce whether the exercise is completed.
+
+The current step is the first exercise in the list that is not completed. Its row gets a **Next** label, an accent bar on the left and `aria-current="step"`. The line above the list shows the progress, for example `Step 2 of 4 · 1 completed`, and changes to `Workout complete: all 4 exercises are done` when every exercise is completed. Exercises can still be marked in any order; the Next label always moves to the first exercise that is still open.
+
+| Function | File | Role |
+|---|---|---|
+| `isExerciseCompleted(exerciseId)` | `js/workout-builder.js` | Tells whether an exercise is marked as completed |
+| `toggleExerciseCompleted(exerciseId)` | `js/workout-builder.js` | Marks or unmarks an exercise and saves the change |
+| `countCompletedExercises(workout)` | `js/workout-builder.js` | Counts the completed exercises in the workout |
+| `getCurrentStepIndex(workout)` | `js/workout-builder.js` | Returns the index of the first exercise that is not completed, or `-1` when all are done |
+| `describeWorkoutProgress(workout)` | `js/workout-builder.js` | Writes the progress line above the list |
+| `saveCompletedExercises(exerciseIds)` | `js/storage.js` | Saves the completed ids as JSON |
+| `loadCompletedExercises()` | `js/storage.js` | Returns the saved ids, or an empty array when nothing valid is saved |
+| `clearCompletedExercises()` | `js/storage.js` | Removes the saved ids |
+
+The completed ids are kept in a `Set` called `completedExerciseIds`. It is filled with `loadCompletedExercises()` when `js/workout-builder.js` loads, so `js/storage.js` must stay before it in `index.html`. The ids are saved under their own key, `fat-a-gym-completed`, so the workout itself under `fat-a-gym-workout` keeps its earlier format. Every change writes the set again, and Clear Workout removes both keys. Removing an exercise also removes its completed state, so an exercise that is added again starts as not completed. Missing or invalid saved data gives an empty list, in the same way as `loadWorkout()`.
+
+The styles for the completed row, the current step and the progress line are added by `addWorkoutModeStyles()` in `js/workout-builder.js`, so the shared `css/style.css` is not edited. They use the page colour variables `--accent`, `--accent-ink` and `--muted`, so they follow the active theme.
+
+Known limits: there is one workout at a time, and the completed state stays until the user selects Undo, removes the exercise or clears the workout. Workout history and progress statistics (FR-10) are planned for Sprint 4.
+
 ## Front Muscle Map and Click Event
 
 ### Purpose
