@@ -28,6 +28,26 @@ function countCompletedExercises(workout) {
   }).length;
 }
 
+// Step by step: the current step is the first exercise that is not completed yet.
+// Returns -1 when every exercise in the workout is completed.
+function getCurrentStepIndex(workout) {
+  return workout.findIndex(function (exercise) {
+    return !isExerciseCompleted(exercise.id);
+  });
+}
+
+function describeWorkoutProgress(workout) {
+  const completedCount = countCompletedExercises(workout);
+  const currentStep = getCurrentStepIndex(workout);
+
+  if (currentStep === -1) {
+    return "Workout complete: all " + workout.length + " exercises are done";
+  }
+
+  return "Step " + (currentStep + 1) + " of " + workout.length +
+    " \u00b7 " + completedCount + " completed";
+}
+
 function addExerciseToWorkout(exercise) {
   const currentWorkout = loadWorkout();
 
@@ -109,22 +129,35 @@ function renderWorkoutList(container) {
 
   const progress = document.createElement("p");
   progress.className = "workout-progress";
-  progress.textContent =
-    countCompletedExercises(workout) + " of " + workout.length + " exercises completed";
+  progress.textContent = describeWorkoutProgress(workout);
   container.appendChild(progress);
 
+  const currentStep = getCurrentStepIndex(workout);
   const list = document.createElement("ul");
 
-  workout.forEach(function (exercise) {
+  workout.forEach(function (exercise, index) {
     const completed = isExerciseCompleted(exercise.id);
+    const isCurrent = index === currentStep;
 
     const item = document.createElement("li");
     item.className = "workout-item";
     item.classList.toggle("workout-item--completed", completed);
+    item.classList.toggle("workout-item--current", isCurrent);
+
+    if (isCurrent) {
+      item.setAttribute("aria-current", "step");
+    }
 
     const name = document.createElement("span");
     name.className = "workout-item-name";
     name.textContent = (completed ? "\u2713 " : "") + (exercise.name || "Unnamed exercise");
+
+    if (isCurrent) {
+      const stepLabel = document.createElement("span");
+      stepLabel.className = "workout-step-label";
+      stepLabel.textContent = "Next";
+      name.prepend(stepLabel);
+    }
 
     const actions = document.createElement("span");
     actions.className = "workout-item-actions";
@@ -185,6 +218,21 @@ function addWorkoutModeStyles() {
     }
     #workout-list .workout-item--completed {
       border-color: var(--accent, #39ff14);
+    }
+    #workout-list .workout-item--current {
+      border-color: var(--accent, #39ff14);
+      box-shadow: inset 4px 0 0 var(--accent, #39ff14);
+    }
+    #workout-list .workout-step-label {
+      display: inline-block;
+      margin-right: var(--space-1, 0.5rem);
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      background: var(--accent, #39ff14);
+      color: var(--accent-ink, #08140a);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
     }
     #workout-list .workout-item--completed .workout-item-name {
       color: var(--muted, #9aa6b5);
