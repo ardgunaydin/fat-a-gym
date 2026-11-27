@@ -4,10 +4,32 @@
 
     view.innerHTML = `
         <svg viewBox="0 0 480 837" xmlns="http://www.w3.org/2000/svg">
+        <style>
+    #anatomy-view .muscle[data-intensity] {
+        fill: transparent !important;
+    }
+
+    #anatomy-view .muscle[data-intensity]:hover,
+    #anatomy-view .muscle[data-intensity].selected {
+        fill: var(--heatmap-color) !important;
+        fill-opacity: 0.65 !important;
+    }
+</style>
             <image href="assets/anatomy/body.webp" x="0" y="0" width="960" height="837"/>
 
-                        <polygon class="muscle" data-muscle="shoulders" points="158,153 146,158 134,172 127,195 124,225 119,255 127,262 142,240 152,218 158,195"/>
-            <polygon class="muscle" data-muscle="shoulders" points="325,153 337,158 349,172 356,195 359,225 364,255 356,262 341,240 331,218 325,195"/>
+                        <path class="muscle" data-muscle="shoulders"
+                             d="M158,153
+                            C130,168 115,194 127,233
+                            Q135,222 142,213
+                            C148,186 177,173 208,166
+                            Q183,151 158,153 Z"/>
+
+                        <path class="muscle" data-muscle="shoulders"
+                            d="M325,153
+                             C353,168 368,194 356,233
+                             Q348,222 341,213
+                             C335,186 306,173 275,166
+                             Q300,151 325,153 Z"/>
 
             <polygon class="muscle" data-muscle="chest" points="233,168 200,163 173,173 158,192 158,225 160,245 180,257 203,265 233,264"/>
             <polygon class="muscle" data-muscle="chest" points="250,168 283,163 310,173 325,192 325,225 323,245 303,257 280,265 250,264"/>
@@ -37,4 +59,68 @@
             detail: { muscle: muscle.dataset.muscle }
         }));
     });
+const frontSvg = view.querySelector('svg');
+
+function updateFrontHeatmap() {
+    const workout = loadWorkout();
+    const muscleCounts = {};
+
+    workout.forEach((exercise) => {
+        const muscle = exercise.muscle;
+
+        if (muscle) {
+            muscleCounts[muscle] =
+                (muscleCounts[muscle] || 0) + 1;
+        }
+    });
+
+    frontSvg.querySelectorAll('.muscle[data-muscle]')
+        .forEach((region) => {
+            const muscle = region.dataset.muscle;
+            const count = muscleCounts[muscle] || 0;
+
+            region.dataset.intensity = Math.min(count, 3);
+            const colors = [
+    "transparent",
+    "#facc15",
+    "#f97316",
+    "#ef4444"
+];
+region.style.setProperty(
+    '--heatmap-color',
+    colors[Math.min(count, 3)]
+);
+            region.dataset.count = count;
+
+let tooltip = region.querySelector('title');
+
+if (!tooltip) {
+    tooltip = document.createElementNS(
+        'http://www.w3.org/2000/svg', 'title'
+    );
+    region.prepend(tooltip);
+}
+
+tooltip.textContent =
+    `Muscle: ${muscle}\n` +
+    `Exercises: ${count}\n` +
+    `Intensity: ${Math.min(count, 3)}/3`;
+        });
+}
+
+updateFrontHeatmap();
+const workoutList = document.getElementById('workout-list');
+
+if (workoutList) {
+    const workoutObserver = new MutationObserver(() => {
+        updateFrontHeatmap();
+    });
+
+    workoutObserver.observe(workoutList, {
+        childList: true,
+        subtree: true
+    });
+}
+
+window.addEventListener('storage', updateFrontHeatmap);
 })();
