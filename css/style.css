@@ -389,6 +389,107 @@ button:active,
   margin: var(--space-1) 0.5rem 0 0;
 }
 
+#exercise-detail .rest-timer {
+  display: grid;
+  grid-template-columns: 112px 112px;
+  grid-template-areas:
+    "time start"
+    "time pause"
+    "time reset";
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 0.8rem;
+  width: fit-content;
+  max-width: 100%;
+  margin: var(--space-3) auto;
+  padding: 1rem 1.2rem;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+#exercise-detail .rest-timer-time {
+  grid-area: time;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 112px;
+  padding: 12px;
+  box-sizing: border-box;
+  border-radius: 50%;
+
+  background: conic-gradient(
+    var(--accent) var(--rest-progress, 100%),
+    var(--line) 0
+  );
+
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  position: relative;
+  isolation: isolate;
+}
+
+#exercise-detail .rest-timer-time::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  z-index: -1;
+}
+
+#exercise-detail .rest-timer-button {
+  min-width: 112px;
+  margin: 0;
+  padding: 0.55rem 1rem;
+  font-size: var(--text-sm);
+  border-radius: 9px;
+}
+
+
+#exercise-detail .rest-timer-button:nth-of-type(2),
+#exercise-detail .rest-timer-button:nth-of-type(3) {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+@media (hover: hover) {
+  #exercise-detail .rest-timer-button:hover {
+    border-color: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  #exercise-detail .rest-timer-button:nth-of-type(2):hover,
+  #exercise-detail .rest-timer-button:nth-of-type(3):hover {
+    background: var(--surface);
+    color: var(--text);
+  }
+}
+
+@media (max-width: 480px) {
+  #exercise-detail .rest-timer {
+    gap: 0.5rem;
+    padding: 0.8rem;
+  }
+
+  #exercise-detail .rest-timer-time {
+    width: 88px;
+    height: 88px;
+    font-size: var(--text-xl);
+  }
+
+  #exercise-detail .rest-timer-button {
+    min-width: 90px;
+    padding: 0.5rem;
+  }
+}
 
 
 /* Favorite is quiet, "Add to Workout" stays green */
