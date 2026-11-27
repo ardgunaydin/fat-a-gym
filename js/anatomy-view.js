@@ -123,6 +123,12 @@
   }
   const style = document.createElement('style');
   style.textContent = `
+    /* #anatomy-view is a row flex container (css/anatomy.css). With the Front/Back bar inside it,
+       the bar and the map shared one row and the map shrank to about 90px on a phone. Stacking
+       them puts the bar above the map and gives the map its full width again. */
+    #anatomy-view {
+      flex-direction: column;
+    }
     .view-switch {
       display: flex;
       justify-content: center;
