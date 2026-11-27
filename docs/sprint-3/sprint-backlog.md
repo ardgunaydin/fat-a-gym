@@ -67,13 +67,13 @@
 | 1 | Rest timer in `js/exercises.js` | Could | 4 | Done | Countdown, pause, reset and a message when the rest is over (19–20 November) |
 | 1 | Data consistency check across all eight `data/*.json` files (NFR-06) | Must | 2 | Done | Marked as done in the 26 November plan; the result was shared with the team, not stored in the repository |
 | 2 | Add the rest-timer sections to the technical documentation and user manual | Must | 2 | Done | Rest timer sections and screenshots (26 November) |
-| 2 | Workout history in `js/history.js` (FR-10, pulled from Sprint 4 on 26 November) | Could | 4 | To Do | Saved workouts listed with date and muscles, newest first; not on `main` yet |
+| 2 | Workout history in `js/history.js` (FR-10, pulled from Sprint 4 on 26 November) | Could | 4 | Done | Saved workouts listed with date and exercise names, newest first; on `main` on 27 November |
 
 ## Shared responsibilities
 
 | Deliverable | Owner | Priority | Story points | Status | Notes |
 |---|---|---:|---:|---|---|
-| Write `docs/sprint-3/summary-<name>.docx` | All members | Must | Not specified in plan | In Progress | Teacher’s template, by 27 November; Arda’s summary is added with this update |
+| Write `docs/sprint-3/summary-<name>.docx` | All members | Must | Not specified in plan | In Progress | Teacher’s template, by 27 November; Arda’s and Feyza’s summaries are added |
 | Add each person’s section to `docs/technical-documentation.md` and `docs/user-manual.md` | All members | Must | Included in individual tasks above | In Progress | Ali, Arda and Feyza have added their Sprint 3 sections; Hassan’s and Tamara’s are still open |
 | Keep own Trello cards up to date | All members | Must | Not specified in plan | Needs confirmation | Finished cards to Done, unfinished cards back to Backlog |
 
